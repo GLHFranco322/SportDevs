@@ -1,0 +1,23 @@
+# Ignorar directorios y archivos del sistema
+.AppData/
+.Application Data/
+.Cookies/
+.Documents/My Music/
+.Documents/My Pictures/
+.Documents/My Videos/
+.Local Settings/
+.My Documents/
+.NetHood/
+.PrintHood/
+.Recent/
+.SendTo/
+.Start Menu/
+.Templates/
+NTUSER.DAT*
+ntuser.ini
+
+# Ignorar otras carpetas no necesarias
+.console-ninja/
+.dotnet/
+.vscode/
+OneDrive/
