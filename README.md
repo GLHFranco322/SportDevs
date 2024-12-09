@@ -42,8 +42,11 @@ https://www.sevensport.com.ar/
 
 Referencias:
 
+Franco Spiazzi:(boceto final)
 https://www.figma.com/design/xpQVq0Dx94V2vObev3Ai5l/Untitled?node-id=0-1&t=KgSXUNCekYxEgRft-1
 
+Sasha Cano:(boceto final)
 https://www.figma.com/design/dil7gaOhmTyHSDyjA8iUyY/Untitled?node-id=0-1&t=5Z9Zr1MDjZVOJakC-1
 
+Franco Spiazzi y Sasha Cano: (Pre boceto)
 https://www.canva.com/design/DAGXz5dThBs/4AglcSDaU7_8ClajEhstzQ/edit?utm_content=DAGXz5dThBs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
