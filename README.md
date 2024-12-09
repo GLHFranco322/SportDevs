@@ -14,7 +14,7 @@ la funcionalidad práctica. Ya seas un atleta en busca de tu próxima meta,
   o simplemente alguien que aprecia el buen estilo.
 
 Sobre Nosotros
-¡Hola! Somos el equipo de .RAR, un grupo de estudiantes apasionados y
+¡Hola! Somos el equipo de sin nombre, un grupo de estudiantes apasionados y
  dedicados a la programación y desarrollo de sitios web, videojuegos y sistemas.
 Nos unimos con el objetivo de realizar el desafio profesional Full Stack.
 Nos gusta trabajar en un ambiente colaborativo donde cada idea cuenta y
