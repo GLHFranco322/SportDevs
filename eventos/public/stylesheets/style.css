@@ -1,8 +1,89 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Squada+One&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Squada One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-a {
-  color: #00B7FF;
+:root{
+  --black-color: #0f0f0f;
+  --white-color: #fefefe;
+  --red-color: #B91616;
+}
+
+header{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  height: 120px;
+  h1{
+    color: var(--white-color);
+    span{
+      color: var(--red-color);
+    }
+  }
+  div{
+    display: flex;
+    height: 50%;
+    align-items: center;
+    nav{
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+  h1:hover{
+    cursor: pointer;
+  }
+}
+
+#header-top{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  justify-content: space-between;
+  div{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  form{
+    position: relative;
+    input{
+      border: 0;
+      height: 1.5rem;
+      border-radius: 9999px;
+    }
+    .fa-magnifying-glass{
+      color: var(--black-color);
+      right: 10px;
+      top: 5px;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+  img{
+    height: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+#header-bottom {
+  justify-content: center;
+  nav{
+    ul{
+      cursor: pointer;
+    }
+  }
+}
+
+footer{
+  background-color: var(--black-color);
+  height: 20%;
 }
