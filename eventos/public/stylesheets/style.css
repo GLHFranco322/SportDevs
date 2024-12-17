@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Squada+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
-
+@import url(../stylesheets/keyframes.css);
 
 /* Estilos en general */
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -14,15 +14,17 @@
 }
 
 /* Variables para colores */
-:root{
+:root {
   --black-color: #0f0f0f;
   --white-color: #fefefe;
   --red-color: #B91616;
+  --width: 100px;
+  --height: 50px;
+  --quantity: 14;
 }
 
-
 /* header */
-header{
+header {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,46 +32,56 @@ header{
   background-color: var(--black-color);
   color: var(--white-color);
   height: 120px;
-  h1{
-    color: var(--white-color);
-    span{
-      color: var(--red-color);
-    }
-  }
-  div{
+
+  div {
     display: flex;
     height: 50%;
     align-items: center;
-    nav{
+
+    nav {
       display: flex;
       flex-direction: row;
       gap: 1rem;
     }
   }
-  h1:hover{
+
+  h1:hover {
     cursor: pointer;
   }
 }
 
 /* Logo, barra de busqueda, boton de login y register y boton de compras */
-#header-top{
+#header-top {
   flex-wrap: wrap;
   margin-left: 2rem;
   margin-right: 2rem;
   justify-content: space-between;
-  div{
+
+  h1 {
+    transition: .5s ease;
+    color: var(--white-color);
+
+    span {
+      color: var(--red-color);
+    }
+  }
+
+  div {
     display: flex;
     flex-direction: row;
     gap: 1rem;
   }
-  form{
+
+  form {
     position: relative;
-    input{
+
+    input {
       border: 0;
       height: 1.5rem;
       border-radius: 9999px;
     }
-    .fa-magnifying-glass{
+
+    .fa-magnifying-glass {
       color: var(--black-color);
       right: 10px;
       top: 5px;
@@ -77,54 +89,163 @@ header{
       cursor: pointer;
     }
   }
-  img{
+
+  img {
     height: 1.5rem;
     cursor: pointer;
+    transition: .5s ease;
   }
+
+  h1:hover {
+    text-shadow: 0 0 10px hsl(0, 0%, 20%);
+    transform: rotate3d(8, 3, 1, 15deg);
+  }
+}
+
+#header-top img:hover {
+  transform: scale(1.1);
 }
 
 /* nav con uls */
 #header-bottom {
   justify-content: center;
-  nav{
+
+  nav {
     flex-wrap: wrap;
-    ul{
+
+    ul {
       cursor: pointer;
+      position: relative;
+
+      div {
+        position: absolute;
+        height: 0;
+        transition: .5s ease;
+
+        li {
+          display: none;
+        }
+      }
     }
   }
 }
 
-/* comienzo del main */
-main{
-  height: 100vh;
-}
-#section_banner{
-  overflow: hidden;
-  position: relative;
-  img{
-    width: 100%;
+#header-bottom nav ul:hover div {
+  z-index: 1;
+  height: auto;
+  width: 200px;
+  padding: 10px;
+  top: 15;
+  left: -25%;
+  background-color: var(--black-color);
+  backdrop-filter: opacity(0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  border-radius: 5px;
+
+  li {
+    display: block;
+
+    a {
+      color: var(--white-color);
+      text-decoration: none;
+    }
   }
 }
 
-.wrapper{
-  margin: 0;
-  width: 100%;
-  height: 50px;
-  background-color: var(--red-color);
-  border: var(--white-color);
-  box-shadow: 0 0 7px black;
+#header-bottom nav ul div li:hover {
+  text-decoration: underline;
 }
 
+/* comienzo del main */
+main {
+  height: 100vh;
+}
+
+#section_banner {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: var(--black-color);
+  height: auto;
+  width: 100%;
+  border: 0;
+  position: relative;
+  
+  img {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+}
+
+/* Logos moviendose de derecha a izquierda continuamente */
+.slider {
+  width: 100%;
+  border-bottom: 4px solid var(--white-color);
+  border-top: 4px solid var(--white-color);
+  background-color: var(--red-color);
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 7px var(--black-color);
+
+  .list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+
+    li {
+      transition: .5s ease;
+      cursor: pointer;
+      width: var(--width);
+      height: var(--height);
+      position: absolute;
+      left: 100%;
+      animation: autoRun 10s linear infinite;
+      animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+
+      img {
+        width: 100%;
+        height: 80%;
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+.slider:hover li{
+  animation-play-state:paused!important;
+}
+
+.slider li:hover{
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 7px var(--white-color));
+}
+
+/* Inspirado en el video de Lun Dev Code*/
+/* https://www.youtube.com/watch?v=mF9yOwlunWk&t=612s */
+
 /* Comienzo de footer */
-footer{
+footer {
   color: var(--white-color);
 }
 
 /* Uls con fondo rojo */
-#footer-top{
+#footer-top {
   background-color: var(--red-color);
   height: 70%;
-  nav{
+
+  nav {
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 100%;
@@ -132,33 +253,40 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    ul{
+
+    ul {
       display: flex;
       flex-direction: column;
       gap: .5rem;
       cursor: pointer;
       font-size: 1rem;
-      li{
+
+      li {
         font-size: .8rem;
         cursor: pointer;
       }
-      h3{
-        text-decoration:underline;
+
+      h3 {
+        text-decoration: underline;
       }
     }
-    div{
+
+    div {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      ul:last-child{
+
+      ul:last-child {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         width: 50%;
-        h3{
+
+        h3 {
           grid-row: 1;
           grid-column: 1/5;
         }
-        li{
+
+        li {
           text-align: center;
           grid-row: 2;
         }
@@ -168,12 +296,13 @@ footer{
 }
 
 /* Parte de abajo del footer */
-#footer-bottom{
+#footer-bottom {
   padding: 1rem;
   background-color: var(--black-color);
   height: 30%;
   text-align: center;
-  p{
+
+  p {
     font-family: "Abel", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -181,6 +310,6 @@ footer{
   }
 }
 
-.img-footer{
+.img-footer {
   height: 2.5rem;
 }
