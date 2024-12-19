@@ -1,11 +1,40 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+
+<%-include("./partials/head.ejs")%>
+
+<body>
+
+  <%-include("./partials/header.ejs")%>
+
+    <main>
+        <section id="section_banner">
+            <img src="/images/banners/home oficial (1).svg" alt="">
+        </section>
+        <section>
+            <div class="slider">
+                <ul class="list">
+                    <li style="--position: 1;"><img src="/images/icons/brands/logo_ (1).png" alt=""></li>
+                    <li style="--position: 2;"><img src="/images/icons/brands/logo_ (2).png" alt=""></li>
+                    <li style="--position: 3;"><img src="/images/icons/brands/logo_ (3).png" alt=""></li>
+                    <li style="--position: 4;"><img src="/images/icons/brands/logo_ (4).png" alt=""></li>
+                    <li style="--position: 5;"><img src="/images/icons/brands/logo_ (5).png" alt=""></li>
+                    <li style="--position: 6;"><img src="/images/icons/brands/logo_ (6).png" alt=""></li>
+                    <li style="--position: 7;"><img src="/images/icons/brands/logo_ (7).png" alt=""></li>
+                    <li style="--position: 8;"><img src="/images/icons/brands/logo_ (8).png" alt=""></li>
+                    <li style="--position: 9;"><img src="/images/icons/brands/logo_ (9).png" alt=""></li>
+                    <li style="--position: 10;"><img src="/images/icons/brands/logo_ (10).png" alt=""></li>
+                    <li style="--position: 11;"><img src="/images/icons/brands/logo_ (11).png" alt=""></li>
+                    <!-- <li style="--position: 12;"><img src="/images/icons/brands/logo_ (12).png" alt=""></li> -->
+                    <li style="--position: 12;"><img src="/images/icons/brands/logo_ (13).png" alt=""></li>
+                    <li style="--position: 13;"><img src="/images/icons/brands/logo_ (14).png" alt=""></li>
+                    <li style="--position: 14;"><img src="/images/icons/brands/logo_ (15).png" alt=""></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <%-include("./partials/footer.ejs")%>
+
+</body>
+
 </html>

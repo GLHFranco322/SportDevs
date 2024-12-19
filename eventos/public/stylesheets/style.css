@@ -76,6 +76,7 @@ header {
     position: relative;
 
     input {
+      padding-left: 10px;
       border: 0;
       height: 1.5rem;
       border-radius: 9999px;
