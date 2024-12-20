@@ -1,4 +1,3 @@
-var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -6,7 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const productosRouter = require('./routes/productos');
+var productosRouter = require('./routes/productos'); // Asegúrate de que este archivo existe y exporta un router
 
 var app = express();
 
@@ -22,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/productos', productosRouter);
+app.use('/productos', productosRouter); // Asegúrate de que productosRouter es una función de middleware
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
