@@ -1,0 +1,137 @@
+/* header */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    height: 120px;
+  
+    div {
+      display: flex;
+      height: 50%;
+      align-items: center;
+  
+      nav {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+    }
+  
+    h1:hover {
+      cursor: pointer;
+    }
+  }
+  
+  /* Logo, barra de busqueda, boton de login y register y boton de compras */
+  #header-top {
+    flex-wrap: wrap;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    justify-content: space-between;
+  
+    h1 {
+      transition: .5s ease;
+      color: var(--white-color);
+  
+      span {
+        color: var(--red-color);
+      }
+    }
+  
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  
+    form {
+      position: relative;
+  
+      input {
+        padding-left: 10px;
+        border: 0;
+        height: 1.5rem;
+        border-radius: 9999px;
+      }
+  
+      .fa-magnifying-glass {
+        color: var(--black-color);
+        right: 10px;
+        top: 5px;
+        position: absolute;
+        cursor: pointer;
+      }
+    }
+  
+    img {
+      height: 1.5rem;
+      cursor: pointer;
+      transition: .5s ease;
+    }
+  
+    h1:hover {
+      text-shadow: 0 0 10px hsl(0, 0%, 20%);
+      transform: rotate3d(8, 3, 1, 15deg);
+    }
+  }
+  
+  #header-top img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* nav con uls */
+  #header-bottom {
+    justify-content: center;
+  
+    nav {
+      flex-wrap: wrap;
+  
+      ul {
+        cursor: pointer;
+        position: relative;
+  
+        div {
+          position: absolute;
+          height: 0;
+          transition: .5s ease;
+  
+          li {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  
+  #header-bottom nav ul:hover div {
+    z-index: 1;
+    height: auto;
+    width: 200px;
+    padding: 10px;
+    top: 15;
+    left: -25%;
+    background-color: var(--black-color);
+    backdrop-filter: opacity(0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    border-radius: 5px;
+  
+    li {
+      display: block;
+  
+      a {
+        color: var(--white-color);
+        text-decoration: none;
+      }
+    }
+  }
+  
+  #header-bottom nav ul div li:hover {
+    text-decoration: underline;
+  }
+  
