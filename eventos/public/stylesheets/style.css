@@ -5,17 +5,11 @@
 @import url(../stylesheets/partials/header.css);
 @import url(../stylesheets/partials/footer.css);
 
-/* comienzo del main */
-/* main {
-  height: 100vh;
-} */
-
 #section_banner {
   overflow: hidden;
   display: flex;
   justify-content: center;
   background-color: var(--black-color);
-  height: auto;
   width: 100%;
   border: 0;
   position: relative;
@@ -81,25 +75,30 @@
 /* Inspirado en el video de Lun Dev Code*/
 /* https://www.youtube.com/watch?v=mF9yOwlunWk&t=612s */
 
+/* Comienzo de sección con marcas */
+
 #clothing_brands {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 5vh 0 5vh 0;
-  height: 100dvh;
+  margin: 5vh 0;
+  width: 100%;
+  min-height: 100dvh;
   align-items: center;
   overflow: hidden;
 
   .brands {
     width: 80%;
-    height: 80dvh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     h2 {
-      grid-column: 1 / 6;
       text-align: right;
       font-size: 4rem;
-      /* height: 100%; */
       position: relative;
       cursor: default;
+      margin-bottom: 1rem;
 
       span {
         color: var(--red-color);
@@ -107,31 +106,33 @@
     }
 
     ul {
-      width: 100%;
-      height: 100%;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(4, 1fr);
       align-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(9rem, 9rem));
       gap: 10px;
+      width: 100%;
+      max-width: 768px;
+      margin: 0 auto;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
 
       li {
-        height: 5rem;
-        width: 100%;
+        height: 9rem;
+        width: 10rem;
         display: flex;
         justify-content: center;
-        /* Centra horizontalmente */
         align-items: center;
 
         img {
-          height: 100%;
-          width: auto;
+          width: 100%;
+          height: auto;
           transform: scale(0.7);
           transition: .5s ease;
 
           &:hover {
             scale: 1.2;
-            filter: drop-shadow(0 0 4px var(--black-color));
+            filter: drop-shadow(-4px 4px 4px var(--black-color));
           }
         }
       }
@@ -145,6 +146,55 @@
   height: .5rem;
   background-color: var(--black-color);
   top: 100%;
-  /* left: 60%; */
   position: absolute;
+}
+
+/* Termina sección "nuestras marcas" */
+/* Comienzo de sección de Black Friday */
+
+#black_friday {
+  background-color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+
+  .h2_black_friday {
+    width: 100%;
+    background-color: var(--black-color);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: var(--white-color);
+
+    h2 {
+      cursor: default;
+      font-size: 2rem;
+      text-shadow: 0 0 5px var(--white-color);
+    }
+  }
+}
+
+.banner_black_friday {
+  background-color: #0D0E12;
+  width: 100%;
+  border: none;
+  height: max-content;
+  text-align: center;
+
+  img {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #section_banner{
+    height: 100dvh;
+    img{
+      border: none;
+      transform: scale(2);
+    }
+  }
 }
