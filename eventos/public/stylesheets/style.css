@@ -193,6 +193,7 @@
   #section_banner{
     height: 100dvh;
     img{
+      height: 100%;
       border: none;
       transform: scale(2);
     }
