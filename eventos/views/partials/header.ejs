@@ -1,13 +1,15 @@
 <body>
     <header>
         <div id="header-top">
-            <h1>SPORT<span>DEVS</span></h1>
+            <a href="/" style="text-decoration: none;">
+                <h1>SPORT<span>DEVS</span></h1>
+            </a>
             <div>
                 <form action="search">
                     <input type="text" name="search">
                     <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
                 </form>
-                <img src="/images/icons/fi_userlogin icon (1).png" alt="">
+                <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
                 <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="">
             </div>
         </div>
@@ -89,9 +91,10 @@
                     <div class="search_navegation_movile">
                         <form action="search" id="form_search_movile">
                             <input type="text" id="search_movile" name="search_movile">
-                            <label for="search_movile" id="lupa_search_movile"><i class="fa-solid fa-magnifying-glass"></i></label>
+                            <label for="search_movile" id="lupa_search_movile"><i
+                                    class="fa-solid fa-magnifying-glass"></i></label>
                         </form>
-                        <img src="/images/icons/fi_userlogin icon (1).png" alt="">
+                        <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
                         <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="">
                     </div>
                     <ul>
@@ -106,4 +109,46 @@
                 </nav>
             </section>
         </div>
+        <!-- Formulario de inicio de sesión -->
+        <div id="login-form" class="login-form">
+            <div class="login-form-content">
+                <span id="close-login-form" class="close-btn">&times;</span>
+                <h2>Iniciar Sesión</h2>
+                <form id="login_form" action="/login" method="post">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <div id="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Recordar cuenta</label>
+                    </div>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <a href="/register">¿No tienes cuenta? Regístrate</a>
+                    <button type="submit" id="submit_button">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const loginIcon = document.querySelector('img[src="/images/icons/fi_userlogin icon (1).png"]');
+                const loginForm = document.getElementById('login-form');
+                const closeLoginForm = document.getElementById('close-login-form');
+
+                loginIcon.addEventListener('click', function () {
+                    loginForm.style.display = 'flex';
+                });
+
+                closeLoginForm.addEventListener('click', function () {
+                    loginForm.style.display = 'none';
+                });
+
+                window.addEventListener('click', function (event) {
+                    if (event.target == loginForm) {
+                        loginForm.style.display = 'none';
+                    }
+                });
+            });
+        </script>
     </header>

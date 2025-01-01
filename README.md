@@ -34,7 +34,7 @@ Franco Dario Spiazzi, diseñador y amante del frontend. Soy un estudiante de
 Sitios deportivos para poder ofrecer una interfas conocida y facil de
  navegar para el usuario común como son:
 
-https://www.sportline.com.ar/ -->
+https://www.sportline.com.ar/
 https://www.adidas.com.ar/
 https://www.solodeportes.com.ar/
 https://www.dexter.com.ar/
