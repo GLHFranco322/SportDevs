@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 /* Estilos en general */
 * {
   padding: 0;
@@ -14,6 +18,7 @@
   --black-color: #0f0f0f;
   --white-color: #fefefe;
   --red-color: #B91616;
+  --blue-color: #207aa4;
   --width: 100px;
   --height: 50px;
   --quantity: 14;
@@ -21,15 +26,11 @@
 
 /* Body */
 
-body,
 html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  font-size: 22px;
 }
 
 main{
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
