@@ -7,6 +7,10 @@ header {
   background-color: var(--black-color);
   color: var(--white-color);
   height: 120px;
+  font-family: "Squada One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  list-style: none;
 
   h1:hover {
     cursor: pointer;

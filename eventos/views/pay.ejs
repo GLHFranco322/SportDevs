@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/pay.css">
+    <script src="https://kit.fontawesome.com/91e0160591.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+    <div class="payment-confirmation" id="payment-confirmation">
+        <h2 id="confirmation-title">Confirmación de Pago</h2>
+        <form id="payment-form">
+            <section id="identification-section">
+                <h3 id="identification-title">Identificación</h3>
+                <p id="email">Correo: ejemplo@correo.com</p>
+                <p id="name">Nombre: Juan Pérez</p>
+            </section>
+            <section id="shipping-section">
+                <h3 id="shipping-title">Envío</h3>
+                <p id="address">Dirección: Calle Falsa 123, Ciudad, País</p>
+                <p id="shipping-cost">Envío: Gratis</p>
+            </section>
+            <section id="payment-section">
+                <h3 id="payment-title">Pago</h3>
+                <label for="gift-card" id="gift-card-label">Usar tarjeta de regalo</label>
+                <input type="text" id="gift-card" name="gift-card" placeholder="Código de tarjeta de regalo" required>
+                
+                <label for="credit-card" id="credit-card-label">Número de tarjeta de crédito</label>
+                <input type="text" id="credit-card" name="credit-card" placeholder="XXXX-XXXX-XXXX-XXXX">
+                
+                <label for="installments" id="installments-label">Cuotas disponibles</label>
+                <select id="installments" name="installments">
+                    <option value="1">1 cuota</option>
+                    <option value="3">3 cuotas</option>
+                    <option value="6">6 cuotas</option>
+                </select>
+                
+                <label for="card-name" id="card-name-label">Nombre en la tarjeta</label>
+                <input type="text" id="card-name" name="card-name">
+                
+                <label for="expiry-date" id="expiry-date-label">Fecha de expiración</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA">
+                
+                <label for="cvv" id="cvv-label">Código de seguridad (CVV)</label>
+                <input type="text" id="cvv" name="cvv">
+                
+                <label for="dni" id="dni-label">DNI (opcional)</label>
+                <input type="text" id="dni" name="dni">
+            </section>
+            <button type="submit" id="confirm-payment-button">Confirmar Pago</button>
+        </form>
+    </div>
+    <div class="cart-summary" id="cart-summary">
+        <h2 id="summary-title">Resumen</h2>
+        <p id="product-summary-1">Nombre del producto con breve descripción $Precio 1u.</p>
+        <p id="product-summary-2">Nombre del producto con breve descripción $Precio 1u.</p>
+        <p id="product-summary-3">Nombre del producto con breve descripción $Precio 1u.</p>
+        <div class="coupon" id="coupon-section">
+            <label for="coupon" id="coupon-label">Cupón de descuento:</label>
+            <input type="text" id="coupon" name="coupon">
+            <button id="apply-coupon">Sumar</button>
+        </div>
+        <h3 id="totals-title">Totales</h3>
+        <p id="subtotal">Subtotal: $$$$$$$</p>
+        <p id="total">Total: $$$$$$$</p>
+    </div>
+</main>
+    
+    <%- include('partials/footer.ejs') %>
+    
+    <script src="script.js"></script>
+</body>
+</html>
