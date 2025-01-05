@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/products.css">
+    <script src="https://kit.fontawesome.com/91e0160591.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <main>
+            <aside>
+                <h2>Filtrar</h2>
+                <div class="filters">
+                        <div class="filter">
+                            <label class="switch">
+                                <input type="checkbox" id="checkboxInput">
+                                <label for="checkboxInput" class="toggleSwitch">
+                                </label>
+                            </label>
+                            <div class="filter-text">
+                                <h3>
+                                    Envio Gratis
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <label class="switch">
+                                <input type="checkbox" id="checkboxInput">
+                                <label for="checkboxInput" class="toggleSwitch">
+                                </label>
+                            </label>
+                            <div class="filter-text">
+                                <h3>
+                                    Llega mañana
+                                </h3>
+                            </div>
+                        </div>
+                </div>
+            </aside>
+            <section>
+                <h2>Productos</h2>
+                <ul>
+                        <li>
+                            <h3>
+                                Zapatillas Locas
+                            </h3>
+                            <p>
+                                Con estas corres mas rápido
+                            </p>
+                            <p>Precio: 1 palo y medio
+                            </p>
+                        </li>
+                </ul>
+            </section>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
