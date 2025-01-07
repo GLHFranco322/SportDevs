@@ -1,0 +1,268 @@
+@import url(./partials/general.css);
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+main {
+    min-height: max-content;
+    /* background-color: var(--black-color); */
+    font-family:'Lato', sans-serif;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    width: 80%;
+    margin: 6rem auto;
+    gap: 1rem;
+}
+
+.slide {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+    width: max-content;
+    margin: 0 auto;
+    height: max-content;
+}
+
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 20rem;
+    height: calc(300px + 3em);
+}
+
+.slide-open:checked+.slide-item {
+    position: static;
+    opacity: 100;
+}
+
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.slide-item img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+}
+
+.slide-control.prev {
+    left: 2%;
+}
+
+.slide-control.next {
+    right: 2%;
+}
+
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#slide-1:checked~.control-1,
+#slide-2:checked~.control-2,
+#slide-3:checked~.control-3 {
+    display: block;
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+    height: max-content;
+}
+
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.slide-circulo:hover {
+    color: var(--red-color);
+}
+
+#slide-1:checked~.control-1~.slide-indicador li:nth-child(1) .slide-circulo,
+#slide-2:checked~.control-2~.slide-indicador li:nth-child(2) .slide-circulo,
+#slide-3:checked~.control-3~.slide-indicador li:nth-child(3) .slide-circulo {
+    color: var(--red-color);
+}
+
+/* Detalle del producto */
+
+.product-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+.product-name {
+    font-size: 3rem;
+    margin: 0;
+    font-family:"Squada One", sans-serif;
+}
+
+.product-code {
+    color: #666666;
+    margin: 5px 0;
+}
+
+.product-price {
+    color: red;
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.product-price span {
+    font-size: 16px;
+    color: #666666;
+}
+
+.product-info {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.sizes,
+.colors {
+    margin-bottom: 20px;
+}
+
+.size-options,
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-top: 10px;
+    height: 100%;
+}
+
+.size {
+    padding: 0 1rem;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: .9rem;
+}
+
+.size:hover {
+    background-color: #cccccc;
+}
+
+input[type="radio"]:checked + .size {
+    background-color: #cccccc;
+  }
+
+.color-options img {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.cart-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    padding: 10px;
+    background-color: var(--white-color);
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: var(--red-color);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quantity-value {
+    font-size: 16px;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    margin-left: 1rem;
+    width: 100%;
+    background-color: var(--red-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: darkred;
+}
+
+.checkout {
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "squada one";
+    font-size: 1.5rem;
+}
+
+.checkout:hover {
+    background-color: var(--blue-color);
+    box-shadow: 0 0 7px var(--blue-color);
+}
+
+input[type="radio"]{
+    visibility: hidden;
+}
