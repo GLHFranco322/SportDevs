@@ -285,7 +285,6 @@ header {
 
       #nav-mobile {
         transition: all .5s ease;
-        height: 80dvh;
       }
     }
   }
@@ -298,7 +297,7 @@ header {
     position: absolute;
     top: 100%;
     overflow: hidden;
-    height: 100dvh;
+    height: max-content;
 
     .search_navegation_movile {
       height: max-content;

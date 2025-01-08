@@ -6,7 +6,6 @@ main {
     /* background-color: var(--black-color); */
     font-family:'Lato', sans-serif;
     display: grid;
-    grid-template-rows: 1fr 2fr;
     width: 80%;
     margin: 6rem auto;
     gap: 1rem;
@@ -14,7 +13,7 @@ main {
 
 .slide {
     position: relative;
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    /* box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64); */
     margin-top: 26px;
     width: max-content;
     margin: 0 auto;
@@ -165,7 +164,7 @@ main {
 .color-options {
     display: flex;
     flex-wrap: wrap;
-    gap: 0;
+    gap: .5em;
     margin-top: 10px;
     height: 100%;
 }
@@ -266,3 +265,49 @@ input[type="radio"]:checked + .size {
 input[type="radio"]{
     visibility: hidden;
 }
+
+/* Comienza seccion de codigo postal y detalles */
+
+.details_ {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: max-content;
+}
+
+.article_description {
+    background-color: #dadada;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    label{
+        cursor: pointer;
+    }
+}
+
+.expand-toggle {
+    display: none;
+}
+
+.article_description p {
+    max-height: 0; 
+    overflow: hidden;
+    padding: 0 10px;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.expand-toggle:checked + p {
+    max-height: 500px; 
+}
+
+.article_description h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
