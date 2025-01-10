@@ -8,8 +8,21 @@
     <title><%=title%></title>
 </head>
 <body>
+
     <%- include('partials/header.ejs') %>
+
     <main>
+        <section>
+            <div class="modeule">
+                <ul>
+                    <li><input type="checkbox">Carrito</li>
+                    <li><input type="checkbox">Identificación</li>
+                    <li><input type="checkbox">Entrega</li>
+                    <li><input type="checkbox">Pago</li>
+                    <li><input type="checkbox">Confirmación</li>
+                </ul>
+            </div>
+        </section>
     <div class="payment-confirmation" id="payment-confirmation">
         <h2 id="confirmation-title">Confirmación de Pago</h2>
         <form id="payment-form">
