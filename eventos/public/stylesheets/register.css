@@ -10,12 +10,13 @@ body {
 main {
     justify-content: center;
     align-items: center;
-    height: 110dvh;
     font-family: "Squada One", serif;
 }
 
 .register {
     height: 80%;
+    margin: 20dvh auto;
+    padding: 1rem;
     width: 80dvw;
     max-width: 600px;
     background-color: var(--form-color);
@@ -32,7 +33,7 @@ main {
 
     form {
         width: 90%;
-        max-height: 100%;
+        height: 100%;
         margin: 0 auto;
         text-align: start;
         display: flex;
@@ -77,6 +78,7 @@ main {
 
         #name-div {
             display: grid;
+            width: 100%;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
             align-items: end;
@@ -84,6 +86,9 @@ main {
 
             label {
                 grid-row: 1;
+            }
+            input{
+                width: 100%;
             }
         }
 
@@ -138,4 +143,15 @@ input[type="checkbox"]:checked::after {
     position: absolute;
     top: -.2rem;
     right: .2rem;
+}
+
+@media (max-width: 1024px) {
+    main{
+        margin-top: 120px;
+    }
+
+    #name-div{
+        width: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
 }

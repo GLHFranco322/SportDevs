@@ -292,6 +292,7 @@ header {
   input:checked~#nav-mobile {
     width: 100%;
     display: grid;
+    place-content: center;
     grid-template-rows: max-content 3fr;
     background-color: var(--black-color);
     position: absolute;
@@ -308,6 +309,10 @@ header {
       gap: 1rem;
       width: 100%;
       margin-top: 2rem;
+
+      a{
+        text-align: center;
+      }
 
       #form_search_movile {
         height: 40px;
