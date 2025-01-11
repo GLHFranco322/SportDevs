@@ -1,15 +1,17 @@
 @import url(./partials/general.css);
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+
 main {
     min-height: max-content;
     /* background-color: var(--black-color); */
-    font-family:'Lato', sans-serif;
-    display: grid;
+    font-family: 'Lato', sans-serif;
     width: 80%;
     margin: 6rem auto;
+    flex-wrap: wrap;
     gap: 1rem;
 }
+
 
 .slide {
     position: relative;
@@ -131,7 +133,7 @@ main {
 .product-name {
     font-size: 3rem;
     margin: 0;
-    font-family:"Squada One", sans-serif;
+    font-family: "Squada One", sans-serif;
 }
 
 .product-code {
@@ -183,9 +185,9 @@ main {
     background-color: #cccccc;
 }
 
-input[type="radio"]:checked + .size {
+input[type="radio"]:checked+.size {
     background-color: #cccccc;
-  }
+}
 
 .color-options img {
     width: 60px;
@@ -262,7 +264,7 @@ input[type="radio"]:checked + .size {
     box-shadow: 0 0 7px var(--blue-color);
 }
 
-input[type="radio"]{
+input[type="radio"] {
     visibility: hidden;
 }
 
@@ -282,7 +284,7 @@ input[type="radio"]{
     border-radius: 5px;
     overflow: hidden;
 
-    label{
+    label {
         cursor: pointer;
     }
 }
@@ -292,14 +294,14 @@ input[type="radio"]{
 }
 
 .article_description p {
-    max-height: 0; 
+    max-height: 0;
     overflow: hidden;
     padding: 0 10px;
     transition: max-height 0.4s ease-in-out;
 }
 
-.expand-toggle:checked + p {
-    max-height: 500px; 
+.expand-toggle:checked+p {
+    max-height: 500px;
 }
 
 .article_description h3 {
@@ -313,6 +315,51 @@ input[type="radio"]{
 
 /* Comienza slider con productos */
 
-#wrapper{
-    
+#another_products {
+    width: 100%;
+    height: 12rem;
+
+    #wrapper {
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 1rem 0;
+
+        ul {
+            align-self: center;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            height: 100%;
+            width: max-content;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                padding: .6rem;
+                height: 100%;
+                width: 10rem;
+                display: grid;
+                place-items: center;
+                text-align: center;
+                border-radius: 20px;
+                box-shadow: 0 0 7px #dadada;
+
+                img {
+                    width: 60%;
+                }
+
+                h4,
+                p {
+                    margin: 0;
+                    text-align: center;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
 }
