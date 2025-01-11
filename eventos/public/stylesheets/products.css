@@ -22,25 +22,34 @@ aside {
   border-right: 2px solid var(--white-color);
   height: 100%;
   place-items: center;
+  position: relative;
 
-  h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
+  #filter-form {
+    position: sticky;
+    top: 120px;
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
 
-  ul {
-    list-style: none;
-    padding: 0;
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
 
-    li {
-      margin-bottom: 10px;
+    ul {
+      list-style: none;
+      padding: 0;
 
-      input {
-        margin-right: 10px;
+      li {
+        margin-bottom: 10px;
+
+        input {
+          margin-right: 10px;
+        }
       }
     }
   }
 }
+
 
 .product-container {
   display: grid;
@@ -57,8 +66,10 @@ article {
   padding: 15px;
   text-align: center;
   background-color: var(--input-color);
-  overflow: hidden; /* Evitar desbordamiento */
-  word-wrap: break-word; /* Romper palabras largas que podrían desbordar */
+  overflow: hidden;
+  /* Evitar desbordamiento */
+  word-wrap: break-word;
+  /* Romper palabras largas que podrían desbordar */
 }
 
 article img {
@@ -69,7 +80,8 @@ article img {
 
 article h3 {
   margin: 10px 0;
-  font-size: 1.1rem; /* Asegúrate de que el texto no sea demasiado grande */
+  font-size: 1.1rem;
+  /* Asegúrate de que el texto no sea demasiado grande */
   word-wrap: break-word;
 }
 
