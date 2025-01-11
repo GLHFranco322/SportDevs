@@ -1,0 +1,102 @@
+[
+    {
+        "imagen": "/images/products/productJson/producto-1.jpg",
+        "titulo": "Zapatillas Nike Air Max",
+        "descripcion": "Zapatillas deportivas con tecnología Air Max para mayor comodidad y estilo. Ideales para correr o uso casual.",
+        "precio": 129.99,
+        "categoria": "Hombres",
+        "subcategoria": "Zapatillas",
+        "marca": "Nike",
+        "stock": 25
+    },
+    {
+        "imagen": "/images/products/productJson/producto-2.jpg",
+        "titulo": "Leggings de Entrenamiento",
+        "descripcion": "Leggings de compresión para mujeres, diseñados para máxima flexibilidad y confort durante tus entrenamientos.",
+        "precio": 49.99,
+        "categoria": "Mujeres",
+        "subcategoria": "Ropa de Entrenamiento",
+        "marca": "Adidas",
+        "stock": 40
+    },
+    {
+        "imagen": "/images/products/productJson/producto-3.jpg",
+        "titulo": "Balón de Fútbol Profesional",
+        "descripcion": "Balón de fútbol fabricado con materiales de alta calidad para una experiencia de juego profesional.",
+        "precio": 59.99,
+        "categoria": "Deportes",
+        "subcategoria": "Fútbol",
+        "marca": "Puma",
+        "stock": 15
+    },
+    {
+        "imagen": "/images/products/productJson/producto-4.jpg",
+        "titulo": "Audífonos Gaming RGB",
+        "descripcion": "Audífonos gaming con iluminación RGB, micrófono ajustable y sonido envolvente para una experiencia inmersiva.",
+        "precio": 89.99,
+        "categoria": "Gaming",
+        "subcategoria": "Accesorios para Gamers",
+        "marca": "HyperX",
+        "stock": 10
+    },
+    {
+        "imagen": "/images/products/productJson/producto-5.jpg",
+        "titulo": "Mochila Escolar Deportiva",
+        "descripcion": "Mochila para niños con diseño ergonómico y amplio espacio para libros, ropa y accesorios.",
+        "precio": 34.99,
+        "categoria": "Niños",
+        "subcategoria": "Mochilas",
+        "marca": "Reebok",
+        "stock": 30
+    },
+    {
+        "imagen": "/images/products/productJson/producto-6.jpg",
+        "titulo": "Sudadera de Entrenamiento",
+        "descripcion": "Sudadera ligera y transpirable, perfecta para entrenamientos en clima frío.",
+        "precio": 39.99,
+        "categoria": "Mujeres",
+        "subcategoria": "Ropa de Entrenamiento",
+        "marca": "Under Armour",
+        "stock": 50
+    },
+    {
+        "imagen": "/images/products/productJson/producto-7.jpg",
+        "titulo": "Botas de Senderismo",
+        "descripcion": "Botas resistentes al agua, ideales para senderismo y actividades al aire libre.",
+        "precio": 89.99,
+        "categoria": "Hombres",
+        "subcategoria": "Calzado Deportivo",
+        "marca": "Columbia",
+        "stock": 20
+    },
+    {
+        "imagen": "/images/products/productJson/producto-8.jpg",
+        "titulo": "Reloj Deportivo con GPS",
+        "descripcion": "Reloj inteligente con GPS integrado, monitor de ritmo cardíaco y resistencia al agua.",
+        "precio": 199.99,
+        "categoria": "Deportes",
+        "subcategoria": "Accesorios",
+        "marca": "Garmin",
+        "stock": 10
+    },
+    {
+        "imagen": "/images/products/productJson/producto-9.jpg",
+        "titulo": "Edición Limitada de Camiseta Star Wars",
+        "descripcion": "Camiseta temática de Star Wars en edición limitada, ideal para fanáticos.",
+        "precio": 34.99,
+        "categoria": "Gaming",
+        "subcategoria": "Ropa Temática",
+        "marca": "Disney",
+        "stock": 8
+    },
+    {
+        "imagen": "/images/products/productJson/producto-10.jpg",
+        "titulo": "Set de Entrenamiento Infantil",
+        "descripcion": "Conjunto de camiseta y pantalón deportivo para niños, fabricado con materiales transpirables.",
+        "precio": 29.99,
+        "categoria": "Niños",
+        "subcategoria": "Sets de Entrenamiento",
+        "marca": "Adidas",
+        "stock": 35
+    }
+]

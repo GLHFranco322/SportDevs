@@ -7,9 +7,8 @@ body {
 }
 
 main {
-    display: grid;
+    display: flex;
     align-items: center;
-    grid-template-columns: 2fr 1fr;
     gap: 3rem;
     width: 80%;
     height: max-content;
