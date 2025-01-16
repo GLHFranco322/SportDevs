@@ -1,2 +1,89 @@
 @import url(./partials/general.css);
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+main {
+    margin-top: 120px;
+    background-color: var(--white-color);
+    font-family: 'lato', Courier, monospace;
+}
+
+#form_loading_image {
+    height: 100dvh;
+    background: #dadada;
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 1.5rem;
+    max-width: 1440px;
+
+    h2 {
+        font-family: "squada one";
+        background-color: var(--red-color);
+        height: max-content;
+        width: 50%;
+        text-align: center;
+        color: var(--white-color);
+        border: solid 2px var(--black-color);
+        border-radius: 5px;
+        padding: .2rem;
+        font-weight: 100;
+    }
+
+    form {
+        height: 90%;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        margin-top: 2rem;
+        font-size: .8rem;
+
+        
+        div{
+            display: flex;
+            flex-direction: column;
+
+            label{
+                color: #838383;
+            }
+
+            input[name="productName"],
+            input[name="description"],
+            select[name="categorys"],
+            select[name="color"],
+            input[name="price"]{
+                height: 2rem;
+                padding: .5rem;
+                border: solid 2px var(--black-color);
+                border-radius: 5px;
+            }
+            textarea[name="technical_sheet"]{
+                height: 6rem;
+                padding: .5rem;
+                border: solid 2px var(--black-color);
+                border-radius: 5px;
+                overflow: hidden;
+            }
+            input[name="image"]{
+                
+            }
+            input[type="color"]{
+                width: 100%;
+            }
+            .button-confirm{
+                background-color: var(--input-color);
+                border-radius: 5px;
+                border: solid 2px var(--black-color);
+                color: var(--white-color);
+                height: 2rem;
+                cursor: pointer;
+                transition: all .5s ease;
+                font-weight: bold;
+
+                &:hover{
+                    background-color: var(--red-color);
+                    box-shadow: 0 0 7px var(--red-color);
+                }
+            }
+        }
+    }
+}

@@ -46,7 +46,7 @@ app.get('/products', (req, res) => {
 app.use('/register', registerRouter);
 app.use('/pay', payRouter);
 app.use('/productDetail', productDetailRouter);
-app.use('/productAdd', productAdd)
+app.use('/productAdd', productAdd);
 
 // Manejo de errores 404
 app.use(function(req, res, next) {
