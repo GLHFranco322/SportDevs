@@ -7,7 +7,7 @@
 3. [Sobre Nosotros](#sobre-nosotros)
 4. [Integrantes](#integrantes)
 5. [Inspiración](#inspiración)
-6. [Referencias](#referencias)
+6. [Bocetos](#bocetos)
 7. [Funcionamiento](#funcionamiento)
 8. [Tecnologías Empleadas](#tecnologías-empleadas)
 9. [Imagenes y videos](#imagenes-y-videos)
@@ -41,11 +41,11 @@ Nos inspiramos en: Sitios deportivos para poder ofrecer una interfaz conocida y 
 - [Dexter](https://www.dexter.com.ar/)
 - [Seven Sport](https://www.sevensport.com.ar/)
 
-## Referencias
+## Bocetos
 
 - *[Franco Spiazzi: Boceto final]*(https://www.figma.com/design/xpQVq0Dx94V2vObev3Ai5l/Untitled?node-id=0-1&t=KgSXUNCekYxEgRft-1)
--*[Sasha Cano: Boceto final]* (https://www.figma.com/design/dil7gaOhmTyHSDyjA8iUyY/Untitled?node-id=0-1&t=5Z9Zr1MDjZVOJakC-1)
--*[Franco Spiazzi y Sasha Cano: Pre boceto]* (https://www.canva.com/design/DAGXz5dThBs/4AglcSDaU7_8ClajEhstzQ/edit?utm_content=DAGXz5dThBs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- *[Sasha Cano: Boceto final]* (https://www.figma.com/design/dil7gaOhmTyHSDyjA8iUyY/Untitled?node-id=0-1&t=5Z9Zr1MDjZVOJakC-1)
+- *[Franco Spiazzi y Sasha Cano: Pre boceto]* (https://www.canva.com/design/DAGXz5dThBs/4AglcSDaU7_8ClajEhstzQ/edit?utm_content=DAGXz5dThBs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Funcionamiento
 
@@ -57,7 +57,7 @@ Nuestro sitio web consta de varias secciones clave:
 4. **Blog**: Contiene artículos y publicaciones relacionadas con temas deportivos y tecnológicos.
 5.**Edición y carga de productos**:Permite al administrados poder editar los productos ya puestos en la pagina y cargar nuevos productos.
 
-Para el backend utilizamos una arquitectura de microservicios con Node.js y Express, mientras que el frontend está construido con React. La base de datos empleada es MongoDB debido a su flexibilidad y escalabilidad.
+Para el backend utilizamos una arquitectura de microservicios con Node.js y Express, mientras que el frontend está construido con React.
 
 ## Tecnologías Empleadas
 
@@ -70,11 +70,10 @@ Para el backend utilizamos una arquitectura de microservicios con Node.js y Expr
 - Node.js
 - Express
 
-
 ***Diseño:***
 - Figma
 - Canva
 
 ## Imagenes y videos
 
- [Algunas de las imagenes y videos del funcionamiento de la pagina:](https://drive.google.com/drive/folders/17ieGlNAXEjkm0Hl-7IeQYJHx0y-u6zVz?usp=sharing) 
+ [Algunas de las imagenes y videos del funcionamiento de la pagina](https://drive.google.com/drive/folders/17ieGlNAXEjkm0Hl-7IeQYJHx0y-u6zVz?usp=sharing) 
