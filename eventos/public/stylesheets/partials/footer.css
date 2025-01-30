@@ -82,3 +82,33 @@ footer {
 .img-footer {
   height: 2.5rem;
 }
+
+@media (max-width: 1024px) {
+  #footer-top{
+    nav {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+
+      ul {
+        li{
+          display: none;
+        }
+      }
+
+      div{
+        align-items: center;
+        gap: .5rem;
+
+        ul:last-child{
+          text-align: center;
+
+          li{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
