@@ -1,7 +1,5 @@
-@import url(../stylesheets/keyframes.css);
 @import url(../stylesheets/partials/general.css);
-@import url(../stylesheets/partials/header.css);
-@import url(../stylesheets/partials/footer.css);
+
 
 main{
   font-family: "Squada One", serif;

@@ -1,6 +1,9 @@
 @import url(./partials/general.css);
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
+@import url(../stylesheets/keyframes.css);
+@import url(../stylesheets/partials/general.css);
+@import url(../stylesheets/partials/header.css);
+@import url(../stylesheets/partials/footer.css);
 
 main {
     min-height: max-content;

@@ -1,5 +1,6 @@
 @import url(./partials/general.css);
 
+
 body {
   background-color: var(--black-color);
   color: var(--white-color);

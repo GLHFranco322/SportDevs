@@ -58,6 +58,11 @@ footer {
         li {
           text-align: center;
           grid-row: 2;
+
+          &:hover {
+
+            animation: iconPulse 2s ease;
+          }
         }
       }
     }
@@ -84,7 +89,7 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  #footer-top{
+  #footer-top {
     nav {
       flex-direction: column;
       justify-content: center;
@@ -92,20 +97,21 @@ footer {
       gap: .5rem;
 
       ul {
-        li{
+        li {
           display: none;
         }
       }
 
-      div{
+      div {
         align-items: center;
         gap: .5rem;
 
-        ul:last-child{
+        ul:last-child {
           text-align: center;
 
-          li{
+          li {
             display: block;
+            transition: .5s ease-in;
           }
         }
       }
