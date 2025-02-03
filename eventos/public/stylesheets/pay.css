@@ -13,7 +13,7 @@ main {
     gap: 3rem;
     width: 80%;
     height: max-content;
-    margin: 120px auto;
+    margin: 0 auto;
     color: var(--black-color);
 
     #payment-confirmation {
@@ -125,6 +125,7 @@ main {
 
 @media (max-width: 1024px) {
     main {
-        margin-top: 120px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 }
