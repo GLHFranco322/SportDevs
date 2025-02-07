@@ -147,6 +147,9 @@ input[type="checkbox"]:checked::after {
 }
 
 @media (max-width: 1024px) {
+    main{
+        margin-top: 120px;
+    }
 
     #name-div{
         width: 100%;

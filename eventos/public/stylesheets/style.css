@@ -1,7 +1,9 @@
+@import url(../stylesheets/keyframes.css);
 @import url(../stylesheets/partials/general.css);
+@import url(../stylesheets/partials/header.css);
+@import url(../stylesheets/partials/footer.css);
 
-
-main {
+main{
   font-family: "Squada One", serif;
 }
 
@@ -190,11 +192,14 @@ main {
 }
 
 @media screen and (max-width: 1024px) {
+main{
+  margin-top: 120px;
+}
 
-  #section_banner {
+  #section_banner{
     /* height: 100dvh; */
 
-    img {
+    img{
       height: 100%;
       border: none;
     }

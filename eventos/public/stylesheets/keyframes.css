@@ -13,21 +13,3 @@
         transform: rotate(360deg);
     }
 }
-
-@keyframes iconPulse {
-    0%, 100% {
-      transform: scale(1);
-      text-shadow: none;
-    }
-
-    25%{
-      transform: scale(1.2);
-      text-shadow: 0 0 10px var(--black-color);
-    }
-
-    50%, 60%{
-      transform: scale(1.2);
-      rotate: 360deg;
-      text-shadow: 0 0 10px var(--black-color);
-    }
-}
