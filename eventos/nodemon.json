@@ -1,5 +1,5 @@
 {
-    "watch": ["bin/www", "routes", "app.js"],
-    "ext": "js,json",
-    "exec": "node ./bin/www"
-  }
+  "watch": ["src/bin/www", "src/routes", "src/app.js"],
+  "ext": "js,json",
+  "exec": "node ./src/bin/www"
+}

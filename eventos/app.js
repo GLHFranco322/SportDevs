@@ -5,22 +5,22 @@ var logger = require('morgan');
 var createError = require('http-errors');
 
 // Rutas
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var registerRouter = require('./routes/register');
-var payRouter = require('./routes/pay');
-var productDetailRouter = require('./routes/productDetail');
-var productAdd = require('./routes/productAdd');
+var indexRouter = require('./src/routes/index');
+var usersRouter = require('./src/routes/users');
+var registerRouter = require('./src/routes/register');
+var payRouter = require('./src/routes/pay');
+var productDetailRouter = require('./src/routes/productDetail');
+var productAddRouter = require('./src/routes/productAdd');
+var productsRouter = require('./src/routes/products');
 
 // Cargar productos desde el archivo JSON en la carpeta 'db'
-var productos = require('./db/products.json');
-
+var productos = require('./src/db/products.json');
 var app = express();
 
 // Configuración del motor de vistas
 app.set('views', [
-  path.join(__dirname, 'views'),
-  path.join(__dirname, 'views/user-views'), 
+  path.join(__dirname, 'src/views'),
+  path.join(__dirname, 'src/views/user-views'), 
 ]);
 app.set('view engine', 'ejs');
 
@@ -29,33 +29,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Rutas principales
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-// Ruta para productos: renderiza la vista 'products' con datos del JSON
-app.get('/products', (req, res) => {
-  res.render('products', {
-    title: 'Lista de Productos',
-    productos, // Enviar el JSON de productos a la vista
-  });
-});
-
 app.use('/register', registerRouter);
 app.use('/pay', payRouter);
 app.use('/productDetail', productDetailRouter);
-app.use('/productAdd', productAdd);
+app.use('/productAdd', productAddRouter);
+app.use('/products', productsRouter);
 
-// Manejo de errores 404
+// Manejo de errores
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// Manejador de errores
 app.use(function(err, req, res, next) {
-  // Configurar mensajes locales, solo mostrar en entorno de desarrollo
+  // Establecer locales, solo proporcionar error en desarrollo
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
