@@ -1,14 +1,18 @@
 @import url(./partials/general.css);
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
+@import url(../stylesheets/keyframes.css);
+@import url(../stylesheets/partials/general.css);
+@import url(../stylesheets/partials/header.css);
+@import url(../stylesheets/partials/footer.css);
 
 main {
     min-height: max-content;
     /* background-color: var(--black-color); */
     font-family: 'Lato', sans-serif;
     width: 80%;
-    margin: 6rem auto;
-    flex-wrap: wrap;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: nowrap;
     gap: 1rem;
 }
 
@@ -16,10 +20,16 @@ main {
 .slide {
     position: relative;
     /* box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64); */
-    margin-top: 26px;
-    width: max-content;
+    width: 100%;
     margin: 0 auto;
     height: max-content;
+
+    .slide-item{
+
+        img{
+            max-height: 100%;
+        }
+    }
 }
 
 .slide-inner {
@@ -27,6 +37,7 @@ main {
     overflow: hidden;
     width: 20rem;
     height: calc(300px + 3em);
+    margin: 0 auto;
 }
 
 .slide-open:checked+.slide-item {

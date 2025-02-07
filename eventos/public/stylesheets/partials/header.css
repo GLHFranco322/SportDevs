@@ -11,6 +11,9 @@ header {
   font-weight: 400;
   font-style: normal;
   list-style: none;
+  position: sticky;
+  top: 0;
+  z-index: 9999!important;
 
   h1:hover {
     cursor: pointer;
@@ -52,6 +55,7 @@ header {
 
   form {
     position: relative;
+    height: max-content;
 
     input {
       padding-left: 10px;
@@ -60,12 +64,20 @@ header {
       border-radius: 9999px;
     }
 
-    .fa-magnifying-glass {
-      color: var(--black-color);
-      right: 10px;
-      top: 5px;
+
+    button{
       position: absolute;
-      cursor: pointer;
+      right: 5%;
+      border: none;
+      height: 100%;
+      background-color: transparent;
+
+      .fa-magnifying-glass {
+        color: var(--black-color);
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
+      }
     }
   }
 
@@ -73,6 +85,10 @@ header {
     height: 1.5rem;
     cursor: pointer;
     transition: .5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   h1:hover {
@@ -81,9 +97,6 @@ header {
   }
 }
 
-#header-top img:hover {
-  transform: scale(1.1);
-}
 
 /* nav con uls */
 /* nav con uls */
@@ -260,7 +273,6 @@ header {
 @media (max-width: 1024px) {
   header {
     z-index: 1;
-    position: fixed;
     top: 0;
 
     #header-top {
@@ -306,9 +318,8 @@ header {
       align-content: center;
       justify-content: center;
       font-size: 20px;
-      gap: 1rem;
+      gap: .3rem;
       width: 100%;
-      margin-top: 2rem;
 
       a{
         text-align: center;
@@ -318,6 +329,16 @@ header {
         height: 40px;
         position: relative;
 
+        button{
+          position: absolute;
+          right: 0;
+          bottom: 20%;
+          font-size: 1rem;
+          background-color: transparent;
+          border: none;
+          color: var(--white-color);
+        }
+        
         #search_movile {
           display: block;
           height: 100%;
@@ -328,6 +349,10 @@ header {
           border-bottom: 1px solid var(--white-color);
           color: var(--white-color);
           font-size: 1rem;
+
+          &:focus{
+            outline: none;
+          }
         }
 
         #lupa_search_movile {
@@ -344,26 +369,29 @@ header {
         width: 30px;
         height: auto;
         margin: 0 auto;
+        transition: .5s ease;
+
+        &:hover{
+          transform: scale(1.1);
+        }
       }
     }
 
     ul {
       display: grid;
       place-items: center;
-      gap: 1rem;
+      gap: .5rem;
       padding-bottom: 2rem;
-      padding-top: 2rem;
 
       li {
         position: relative;
         text-align: center;
         width: max-content;
-        font-size: 1.5em;
 
         a {
           color: var(--white-color);
           text-decoration: none;
-          font-size: 2rem;
+          font-size: 1.2rem;
         }
       }
     }
