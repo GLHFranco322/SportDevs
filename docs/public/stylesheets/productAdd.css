@@ -1,0 +1,110 @@
+@import url(./partials/general.css);
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+
+main {
+    background-color: var(--white-color);
+    font-family: 'Lato', Courier, monospace;
+}
+
+#form_loading_image {
+    background: #dadada;
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 1.5rem;
+    max-width: 1024px;
+
+    #form_title {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
+        width: 100%;
+
+        input[type="radio"]:checked + label h2 {
+            background-color: var(--red-color);
+        }
+
+        h2 {
+            font-family: "Squada One", sans-serif;
+            background-color: var(--input-color);
+            height: max-content;
+            text-align: center;
+            color: var(--white-color);
+            border: solid 2px var(--black-color);
+            border-radius: 5px;
+            padding: .2rem;
+            font-weight: 100;
+            cursor: pointer;
+        }
+    }
+
+    #form_loading,
+    #form_edit {
+        height: 90%;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        margin-top: 2rem;
+        font-size: 1rem;
+        gap: 1rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: #838383;
+            }
+
+            input[name="productName"],
+            input[name="description"],
+            select[name="categorys"],
+            select[name="color"],
+            input[name="price"] {
+                height: 2rem;
+                padding: .5rem;
+                border: solid 2px var(--black-color);
+                border-radius: 5px;
+            }
+
+            textarea[name="technical_sheet"] {
+                height: 6rem;
+                padding: .5rem;
+                border: solid 2px var(--black-color);
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            input[name="image"] {}
+
+            input[type="color"] {
+                width: 100%;
+            }
+
+            .button-confirm {
+                background-color: var(--input-color);
+                border-radius: 5px;
+                border: solid 2px var(--black-color);
+                color: var(--white-color);
+                height: 2rem;
+                cursor: pointer;
+                transition: all .5s ease;
+                font-weight: 100;
+                font-family: "squada one";
+                font-size: larger;
+
+                &:hover {
+                    background-color: var(--red-color);
+                    box-shadow: 0 0 7px var(--red-color);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    main{
+        margin-top: 0;
+    }
+}

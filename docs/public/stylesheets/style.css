@@ -1,0 +1,202 @@
+@import url(../stylesheets/partials/general.css);
+
+
+main {
+  font-family: "Squada One", serif;
+}
+
+#section_banner {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: var(--black-color);
+  width: 100%;
+  border: 0;
+  position: relative;
+
+  img {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+}
+
+/* Logos moviendose de derecha a izquierda continuamente */
+.slider {
+  width: 100%;
+  border-bottom: 4px solid var(--white-color);
+  border-top: 4px solid var(--white-color);
+  background-color: var(--red-color);
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 7px var(--black-color);
+
+  .list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+
+    li {
+      transition: .5s ease;
+      cursor: pointer;
+      width: var(--width);
+      height: var(--height);
+      position: absolute;
+      left: 100%;
+      animation: autoRun 10s linear infinite;
+      animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+
+      img {
+        width: auto;
+        height: 80%;
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+.slider:hover li {
+  animation-play-state: paused !important;
+}
+
+.slider li:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 7px var(--white-color));
+}
+
+/* Inspirado en el video de Lun Dev Code*/
+/* https://www.youtube.com/watch?v=mF9yOwlunWk&t=612s */
+
+/* Comienzo de sección con marcas */
+
+#clothing_brands {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5vh 0;
+  width: 100%;
+  min-height: 100dvh;
+  align-items: center;
+  overflow: hidden;
+
+  .brands {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      text-align: right;
+      font-size: 4rem;
+      position: relative;
+      cursor: default;
+      margin-bottom: 1rem;
+
+      span {
+        color: var(--red-color);
+      }
+    }
+
+    ul {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(9rem, 9rem));
+      gap: 10px;
+      width: 100%;
+      max-width: 1030px;
+      margin: 0 auto;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+
+      li {
+        height: 9rem;
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: auto;
+          transform: scale(0.7);
+          transition: .5s ease;
+
+          &:hover {
+            scale: 1.2;
+            filter: drop-shadow(-4px 4px 4px var(--black-color));
+          }
+        }
+      }
+    }
+  }
+}
+
+#clothing_brands h2::before {
+  content: '';
+  width: 120%;
+  height: .5rem;
+  background-color: var(--black-color);
+  top: 100%;
+  position: absolute;
+}
+
+/* Termina sección "nuestras marcas" */
+/* Comienzo de sección de Black Friday */
+
+#black_friday {
+  background-color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+
+  .h2_black_friday {
+    width: 100%;
+    background-color: var(--black-color);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: var(--white-color);
+
+    h2 {
+      cursor: default;
+      font-size: 2rem;
+      text-shadow: 0 0 5px var(--white-color);
+    }
+  }
+}
+
+.banner_black_friday {
+  background-color: #0D0E12;
+  width: 100%;
+  border: none;
+  height: max-content;
+  text-align: center;
+
+  img {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  #section_banner {
+    /* height: 100dvh; */
+
+    img {
+      height: 100%;
+      border: none;
+    }
+  }
+}

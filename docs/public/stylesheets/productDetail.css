@@ -1,0 +1,376 @@
+@import url(./partials/general.css);
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url(../stylesheets/keyframes.css);
+@import url(../stylesheets/partials/general.css);
+@import url(../stylesheets/partials/header.css);
+@import url(../stylesheets/partials/footer.css);
+
+main {
+    min-height: max-content;
+    /* background-color: var(--black-color); */
+    font-family: 'Lato', sans-serif;
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+
+
+.slide {
+    position: relative;
+    /* box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64); */
+    width: 100%;
+    margin: 0 auto;
+    height: max-content;
+
+    .slide-item{
+
+        img{
+            max-height: 100%;
+        }
+    }
+}
+
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 20rem;
+    height: calc(300px + 3em);
+    margin: 0 auto;
+}
+
+.slide-open:checked+.slide-item {
+    position: static;
+    opacity: 100;
+}
+
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.slide-item img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+}
+
+.slide-control.prev {
+    left: 2%;
+}
+
+.slide-control.next {
+    right: 2%;
+}
+
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#slide-1:checked~.control-1,
+#slide-2:checked~.control-2,
+#slide-3:checked~.control-3 {
+    display: block;
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+    height: max-content;
+}
+
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.slide-circulo:hover {
+    color: var(--red-color);
+}
+
+#slide-1:checked~.control-1~.slide-indicador li:nth-child(1) .slide-circulo,
+#slide-2:checked~.control-2~.slide-indicador li:nth-child(2) .slide-circulo,
+#slide-3:checked~.control-3~.slide-indicador li:nth-child(3) .slide-circulo {
+    color: var(--red-color);
+}
+
+/* Detalle del producto */
+
+.product-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+.product-name {
+    font-size: 3rem;
+    margin: 0;
+    font-family: "Squada One", sans-serif;
+}
+
+.product-code {
+    color: #666666;
+    margin: 5px 0;
+}
+
+.product-price {
+    color: red;
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.product-price span {
+    font-size: 16px;
+    color: #666666;
+}
+
+.product-info {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.sizes,
+.colors {
+    margin-bottom: 20px;
+}
+
+.size-options,
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    margin-top: 10px;
+    height: 100%;
+}
+
+.size {
+    padding: 0 1rem;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: .9rem;
+}
+
+.size:hover {
+    background-color: #cccccc;
+}
+
+input[type="radio"]:checked+.size {
+    background-color: #cccccc;
+}
+
+.color-options img {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.cart-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    padding: 10px;
+    background-color: var(--white-color);
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: var(--red-color);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quantity-value {
+    font-size: 16px;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    margin-left: 1rem;
+    width: 100%;
+    background-color: var(--red-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: darkred;
+}
+
+.checkout {
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "squada one";
+    font-size: 1.5rem;
+}
+
+.checkout:hover {
+    background-color: var(--blue-color);
+    box-shadow: 0 0 7px var(--blue-color);
+}
+
+input[type="radio"] {
+    visibility: hidden;
+}
+
+/* Comienza seccion de codigo postal y detalles */
+
+.details_ {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: max-content;
+}
+
+.article_description {
+    background-color: #dadada;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.expand-toggle {
+    display: none;
+}
+
+.article_description p {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.expand-toggle:checked+p {
+    max-height: 500px;
+}
+
+.article_description h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Comienza slider con productos */
+
+#another_products {
+    width: 100%;
+    height: 12rem;
+
+    #wrapper {
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 1rem 0;
+
+        ul {
+            align-self: center;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            height: 100%;
+            width: max-content;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                padding: .6rem;
+                height: 100%;
+                width: 10rem;
+                display: grid;
+                place-items: center;
+                text-align: center;
+                border-radius: 20px;
+                box-shadow: 0 0 7px #dadada;
+
+                img {
+                    width: 60%;
+                }
+
+                h4,
+                p {
+                    margin: 0;
+                    text-align: center;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}

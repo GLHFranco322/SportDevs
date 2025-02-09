@@ -1,0 +1,95 @@
+@import url(./partials/general.css);
+
+
+body {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: 'squada one';
+  min-height: 100dvh;
+  margin: 0 auto;
+  width: 80%;
+  font-size: .7rem;
+}
+
+aside {
+  padding: 20px;
+  border-right: 2px solid var(--white-color);
+  height: 100%;
+  place-items: center;
+  position: relative;
+
+  #filter-form {
+    position: sticky;
+    top: 120px;
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        input {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-template-rows: auto;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+article {
+  border: 1px solid var(--white-color);
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  background-color: var(--input-color);
+  overflow: hidden;
+  /* Evitar desbordamiento */
+  word-wrap: break-word;
+  /* Romper palabras largas que podrían desbordar */
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+article h3 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  /* Asegúrate de que el texto no sea demasiado grande */
+  word-wrap: break-word;
+}
+
+article p {
+  margin: 5px 0;
+}
+
+article .price {
+  font-weight: bold;
+}

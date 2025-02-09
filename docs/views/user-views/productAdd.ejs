@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <script src="https://kit.fontawesome.com/91e0160591.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sabia que ibas a leer esto por eso te dejo el comentario acá. 
+    En cuanto a los heads, no se como utilizar distintos css para 
+    cada vista utilizando siempre el mismo head. Por eso cada vista tiene su head.
+    Ayuda please -->
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+        <main>
+            <section id="form_loading_image">
+
+                <!-- Opciones de formulario -->
+                <form id="form_title">
+                    <input type="radio" id="h2_option1" name="option" value="option_1" style="display: none;">
+                    <label for="h2_option1">
+                        <h2>Cargar</h2>
+                    </label>
+
+                    <input type="radio" id="h2_option2" name="option" value="option_2" style="display: none;">
+                    <label for="h2_option2">
+                        <h2>Editar</h2>
+                    </label>
+                </form>
+
+                <!-- Formulario para cargar productos -->
+                <form action="#" id="form_loading" method="POST" style="display: none;">
+                    <div>
+                        <label for="productName">Nombre del producto</label>
+                        <input type="text" name="productName" required>
+                    </div>
+
+                    <div>
+                        <label for="description">Características</label>
+                        <input type="text" name="description" placeholder="Detalle" required>
+                    </div>
+
+                    <div>
+                        <label for="technical_sheet">Ficha técnica</label>
+                        <textarea name="technical_sheet" id="technical_sheet"
+                            placeholder="Ingresa toda la información del producto" required></textarea>
+                    </div>
+
+                    <div class="form-file">
+                        <div class="form-file__action">
+                            <label for="image" class="title">Foto de publicación</label>
+                            <input type="file" name="image" id="image" />
+                        </div>
+                        <div class="form-file__result" id="result-image">
+                            <img id="img-result" alt="" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="categorys">Categoría</label>
+                        <select id="categorys" name="categorys" required>
+                            <option value="categoria1">Categoría 1</option>
+                            <option value="categoria2">Categoría 2</option>
+                            <option value="categoria3">Categoría 3</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="color">Color</label>
+                        <select id="color" name="color" required>
+                            <option value="color1" style="background: var(--red-color);">Rojo</option>
+                            <option value="color2" style="background: var(--black-color);">Negro</option>
+                            <option value="color3" style="background-color: rgba(0, 128, 0, 0.274);">Color esperanza
+                            </option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="price">Precio</label>
+                        <input type="number" id="price" name="price" placeholder="Ej. 500" min="0" step="0.01" required>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="button-confirm">Confirmar</button>
+                    </div>
+                </form>
+
+                <!-- Formulario para editar productos -->
+                <form action="#" id="form_edit" method="POST" style="display: none;">
+                    <div>
+                        <label for="productName">Nombre del producto</label>
+                        <select name="productName" id="productName" required
+                        style="
+                        height: 2rem;
+                        padding: .5rem;
+                        border: solid 2px var(--black-color);
+                        border-radius: 5px;"
+                        >
+                            <option value="" disabled selected>Selecciona un producto</option>
+                            <option value="producto1">Producto 1</option>
+                            <option value="producto2">Producto 2</option>
+                            <option value="producto3">Producto 3</option>
+                            <!-- Este es un ejemplo, acá irían los productos del JSON -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="description">Características</label>
+                        <input type="text" name="description" placeholder="Detalle" required>
+                    </div>
+
+                    <div>
+                        <label for="technical_sheet">Ficha técnica</label>
+                        <textarea name="technical_sheet" id="technical_sheet"
+                            placeholder="Ingresa toda la información del producto" required></textarea>
+                    </div>
+
+                    <div class="form-file">
+                        <div class="form-file__action">
+                            <label for="image" class="title">Foto de publicación</label>
+                            <input type="file" name="image" id="image" />
+                        </div>
+                        <div class="form-file__result" id="result-image">
+                            <img id="img-result" alt="" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="categorys">Categoría</label>
+                        <select id="categorys" name="categorys" required>
+                            <option value="categoria1">Categoría 1</option>
+                            <option value="categoria2">Categoría 2</option>
+                            <option value="categoria3">Categoría 3</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="color">Color</label>
+                        <select id="color" name="color" required>
+                            <option value="color1" style="background: var(--red-color);">Rojo</option>
+                            <option value="color2" style="background: var(--black-color);">Negro</option>
+                            <option value="color3" style="background-color: rgba(0, 128, 0, 0.274);">Color esperanza
+                            </option>
+                            <!-- Acepto recomendaciones de como implementar lo de los colores -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="price">Precio</label>
+                        <input type="number" id="price" name="price" placeholder="Ej. 500" min="0" step="0.01" required>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="button-confirm">Confirmar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Incluye el script externo -->
+        <script src="/scripts/productAdd.js"></script>
+
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

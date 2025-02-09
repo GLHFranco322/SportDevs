@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/products.css">
+    <script src="https://kit.fontawesome.com/91e0160591.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title || "Productos" %>
+    </title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+        <!-- Sidebar de filtros -->
+        <aside>
+            <form id="filter-form">
+                <h2>Filtrar por:</h2>
+                <h3>Marcas</h3>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="nike" name="marca" value="Nike">
+                        <label for="nike">Nike</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="adidas" name="marca" value="Adidas">
+                        <label for="adidas">Adidas</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="puma" name="marca" value="Puma">
+                        <label for="puma">Puma</label>
+                    </li>
+                </ul>
+                <h3>Categorías</h3>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="hombres" name="categoria" value="Hombres">
+                        <label for="hombres">Hombres</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="mujeres" name="categoria" value="Mujeres">
+                        <label for="mujeres">Mujeres</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ninos" name="categoria" value="Niños">
+                        <label for="ninos">Niños</label>
+                    </li>
+                </ul>
+                <button type="submit">Aplicar Filtros</button>
+            </form>
+        </aside>
+    
+        <!-- Contenedor de productos -->
+        <section class="product-container" id="product-container">
+            <% if (productos && productos.length > 0) { %>
+                <% productos.forEach(producto => { %>
+                    <article class="product">
+                        <img src="<%= producto.imagen%>" alt="<%= producto.titulo %>">
+                        <h3><%= producto.titulo %></h3>
+                        <p><%= producto.descripcion %></p>
+                        <p class="price">$<%= producto.precio.toFixed(2) %></p>
+                    </article>
+                <% }); %>
+            <% } else { %>
+                <p>No hay productos disponibles.</p>
+            <% } %>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

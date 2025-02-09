@@ -1,0 +1,168 @@
+<body>
+    <header>
+        <div id="header-top">
+            <a href="/" style="text-decoration: none;">
+                <h1>SPORT<span>DEVS</span></h1>
+            </a>
+            <div>
+                <form action="search">
+                    <input type="text" name="search">
+                    <button type="submit">
+                        <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    </button>
+                </form>
+                <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+                <a href="/pay">
+                    <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="Carrito de compras">
+                </a>            </div>
+        </div>
+        <div id="header-bottom">
+            <nav id="nav-desktop">
+                <ul>
+                    <h3>LANZAMIENTOS</h3>
+                    <div class="div_nav-desktop">
+                        <li><a href="#">Nuevos Productos</a></li>
+                        <li><a href="#">Ediciones Limitadas</a></li>
+                        <li><a href="#">Ofertas Exclusivas</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3>MUJERES</h3>
+                    <div class="div_nav-desktop">
+                        <li><a href="#">Calzado Deportivo</a></li>
+                        <li><a href="#">Ropa de Entrenamiento</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Colecciones Populares</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3>HOMBRES</h3>
+                    <div class="div_nav-desktop">
+                        <li><a href="#">Zapatillas</a></li>
+                        <li><a href="#">Camisetas y Polos</a></li>
+                        <li><a href="#">Pantalones y Shorts</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3>NIÑOS</h3>
+                    <div class="div_nav-desktop">
+                        <li><a href="#">Zapatillas</a></li>
+                        <li><a href="#">Ropa Deportiva</a></li>
+                        <li><a href="#">Sets de Entrenamiento</a></li>
+                        <li><a href="#">Mochilas</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3>MARCAS</h3>
+                    <div class="div_nav-desktop">
+                        <li><a href="#">Nike</a></li>
+                        <li><a href="#">Adidas</a></li>
+                        <li><a href="#">Puma</a></li>
+                        <li><a href="#">Reebok</a></li>
+                        <li><a href="#">Under Armour</a></li>
+                    </div class="div_nav-desktop">
+                </ul>
+                <ul>
+                    <h3>DEPORTES</h3>
+                    <div class="div_nav-desktop">
+                        <li><a href="#">Fútbol</a></li>
+                        <li><a href="#">Running</a></li>
+                        <li><a href="#">Yoga</a></li>
+                        <li><a href="#">Basketball</a></li>
+                        <li><a href="#">Natación</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3>GAMING</h3>
+                    <div class="div_nav-desktop">
+                        <li><a href="#">Ropa Temática</a></li>
+                        <li><a href="#">Accesorios para Gamers</a></li>
+                        <li><a href="#">Colaboraciones Especiales</a></li>
+                        <li><a href="#">Ofertas Exclusivas</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3><a href="/products" 
+                        style="text-decoration: none; 
+                        color: var(--white-color);">PRODUCTOS</a></h3>
+                </ul>
+            </nav>
+            <section id="togle-boton">
+                <input type="checkbox" id="togle">
+                <label for="togle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <nav id="nav-mobile">
+                    <div class="search_navegation_movile">
+                        <form action="search" id="form_search_movile">
+                            <input type="text" id="search_movile" name="search_movile">
+                            <button type="submit">
+                                <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                            </button>
+                        </form>
+                        <a href="/register">
+                            <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+                        </a>
+                        <a href="/pay">
+                            <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="">
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="#">LANZAMIENTOS</a></li>
+                        <li><a href="#">MUJERES</a></li>
+                        <li><a href="#">HOMBRES</a></li>
+                        <li><a href="#">NIÑOS</a></li>
+                        <li><a href="#">MARCAS</a></li>
+                        <li><a href="#">DEPORTES</a></li>
+                        <li><a href="#">GAMING</a></li>
+                        <li><a href="/products">PRODUCTOS</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+        <!-- Formulario de inicio de sesión -->
+        <div id="login-form" class="login-form">
+            <div class="login-form-content">
+                <span id="close-login-form" class="close-btn">&times;</span>
+                <h2>Iniciar Sesión</h2>
+                <form id="login_form" action="/login" method="post">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <div id="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Recordar cuenta</label>
+                    </div>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <a href="/register">¿No tienes cuenta? Regístrate</a>
+                    <button type="submit" id="submit_button">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const loginIcon = document.querySelector('img[src="/images/icons/fi_userlogin icon (1).png"]');
+                const loginForm = document.getElementById('login-form');
+                const closeLoginForm = document.getElementById('close-login-form');
+
+                loginIcon.addEventListener('click', function () {
+                    loginForm.style.display = 'flex';
+                });
+
+                closeLoginForm.addEventListener('click', function () {
+                    loginForm.style.display = 'none';
+                });
+
+                window.addEventListener('click', function (event) {
+                    if (event.target == loginForm) {
+                        loginForm.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+    </header>
