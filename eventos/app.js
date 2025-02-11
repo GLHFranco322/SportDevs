@@ -9,9 +9,8 @@ var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
 var registerRouter = require('./src/routes/register');
 var payRouter = require('./src/routes/pay');
-var productDetailRouter = require('./src/routes/productDetail');
 var productAddRouter = require('./src/routes/productAdd');
-var productsRouter = require('./src/routes/products');
+var productsRouter = require('./src/routes/products'); 
 
 // Cargar productos desde el archivo JSON en la carpeta 'db'
 var productos = require('./src/db/products.json');
@@ -36,9 +35,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/register', registerRouter);
 app.use('/pay', payRouter);
-app.use('/productDetail', productDetailRouter);
 app.use('/productAdd', productAddRouter);
-app.use('/products', productsRouter);
+app.use('/products', productsRouter); // Usar el enrutador de productos
 
 // Manejo de errores
 app.use(function(req, res, next) {

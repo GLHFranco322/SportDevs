@@ -24,9 +24,9 @@ main {
     margin: 0 auto;
     height: max-content;
 
-    .slide-item{
+    .slide-item {
 
-        img{
+        img {
             max-height: 100%;
         }
     }
@@ -348,27 +348,39 @@ input[type="radio"] {
             margin: 0;
             list-style: none;
 
-            li {
-                padding: .6rem;
-                height: 100%;
-                width: 10rem;
-                display: grid;
-                place-items: center;
-                text-align: center;
-                border-radius: 20px;
-                box-shadow: 0 0 7px #dadada;
+            a {
+                text-decoration: none;
+                color: var(--black-color);
 
-                img {
-                    width: 60%;
-                }
-
-                h4,
-                p {
-                    margin: 0;
+                li {
+                    padding: .6rem;
+                    height: 100%;
+                    width: 10rem;
+                    display: grid;
+                    place-items: center;
                     text-align: center;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
+                    border-radius: 20px;
+                    box-shadow: 0 0 7px #dadada;
+
+                    #img_container{
+                        max-height: 100%;
+                        width: 60%;
+                        overflow: hidden;
+
+                        img {
+                            max-height: 100%;
+                            width: 100%;
+                        }
+                    }
+
+                    h4,
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        overflow: hidden;
+                        white-space: wrap;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }

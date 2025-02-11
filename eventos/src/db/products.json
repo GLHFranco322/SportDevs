@@ -1,5 +1,16 @@
 [
     {
+        "id": 0,
+        "imagen": "/images/products/airJordan/fireRed_1.jpg",
+        "titulo": "Air Jordan 4 Retro 'Fire Red' 2020",
+        "descripcion": "Las Air Jordan 4 Retro 'Fire Red' 2020 son una reedición del colorway original de 1989. La silueta presenta una parte superior de cuero blanco con detalles en rojo",
+        "precio": 200,
+        "categoria": "Hombres",
+        "subcategoria": "Zapatillas",
+        "marca": "Jordan",
+        "stock": 10
+    },
+    {
         "id": 1,
         "imagen": "/images/products/productJson/producto-1.jpg",
         "titulo": "Zapatillas Nike Air Max",
