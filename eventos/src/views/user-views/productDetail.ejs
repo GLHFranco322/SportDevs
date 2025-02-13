@@ -14,227 +14,228 @@
 <body>
     <%- include('../partials/header.ejs') %>
 
-    <main>
+        <main>
 
-        <section id="product">
+            <div class="container_div">
 
-            <div class="slide">
-                <div class="slide-inner">
-                    <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden=""
-                        checked="checked">
-                    <div class="slide-item">
-                        <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
+                <section id="product">
+
+                    <div class="slide">
+                        <div class="slide-inner">
+                            <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true"
+                                hidden="" checked="checked">
+                            <div class="slide-item">
+                                <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
+                            </div>
+                            <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true"
+                                hidden="">
+                            <div class="slide-item">
+                                <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
+                            </div>
+                            <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true"
+                                hidden="">
+                            <div class="slide-item">
+                                <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
+                            </div>
+                            <label for="slide-3" class="slide-control prev control-1">‹</label>
+                            <label for="slide-2" class="slide-control next control-1">›</label>
+                            <label for="slide-1" class="slide-control prev control-2">‹</label>
+                            <label for="slide-3" class="slide-control next control-2">›</label>
+                            <label for="slide-2" class="slide-control prev control-3">‹</label>
+                            <label for="slide-1" class="slide-control next control-3">›</label>
+                            <ol class="slide-indicador">
+                                <li>
+                                    <label for="slide-1" class="slide-circulo"><i
+                                            class="fa-regular fa-square"></i></label>
+                                </li>
+                                <li>
+                                    <label for="slide-2" class="slide-circulo"><i
+                                            class="fa-regular fa-square"></i></label>
+                                </li>
+                                <li>
+                                    <label for="slide-3" class="slide-circulo"><i
+                                            class="fa-regular fa-square"></i></label>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
-                    <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
-                    </div>
-                    <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
-                    </div>
-                    <label for="slide-3" class="slide-control prev control-1">‹</label>
-                    <label for="slide-2" class="slide-control next control-1">›</label>
-                    <label for="slide-1" class="slide-control prev control-2">‹</label>
-                    <label for="slide-3" class="slide-control next control-2">›</label>
-                    <label for="slide-2" class="slide-control prev control-3">‹</label>
-                    <label for="slide-1" class="slide-control next control-3">›</label>
-                    <ol class="slide-indicador">
-                        <li>
-                            <label for="slide-1" class="slide-circulo"><i class="fa-regular fa-square"></i></label>
-                        </li>
-                        <li>
-                            <label for="slide-2" class="slide-circulo"><i class="fa-regular fa-square"></i></label>
-                        </li>
-                        <li>
-                            <label for="slide-3" class="slide-circulo"><i class="fa-regular fa-square"></i></label>
-                        </li>
-                    </ol>
-                </div>
+                    <!-- para esta parte utilicé un template de la página "https://www.migueltroyano.com/css/carrusel-imagenes-html-css/" -->
+
+                    <form class="product-container" action="/add-to-cart" method="POST">
+                        <h1 class="product-name">
+                            <%= product.titulo %>
+                        </h1>
+                        <p class="product-code">
+                            <%= product.id %>
+                        </p>
+                        <p class="product-price">$<%= product.precio.toFixed(2) %>
+                        </p>
+                        <p class="product-info">Cuotas sin interés</p>
+
+                        <!-- Selección de talles -->
+                        <div class="sizes">
+                            <p>Talles:</p>
+                            <div class="size-options">
+                                <label>
+                                    <input type="radio" name="size" value="35" required />
+                                    <span class="size">35</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="36" />
+                                    <span class="size">36</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="37" />
+                                    <span class="size">37</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="38" />
+                                    <span class="size">38</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="39" />
+                                    <span class="size">39</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="40" />
+                                    <span class="size">40</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="41" />
+                                    <span class="size">41</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="42" />
+                                    <span class="size">42</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Selección de colores -->
+                        <div class="colors">
+                            <p>Colores:</p>
+                            <div class="color-options">
+                                <label>
+                                    <input type="radio" name="color" value="color1" required />
+                                    <img src="shoe1.jpg" alt="Color 1" />
+                                </label>
+                                <label>
+                                    <input type="radio" name="color" value="color2" />
+                                    <img src="shoe2.jpg" alt="Color 2" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Ajuste de cantidad -->
+                        <div class="cart-actions">
+                            <div class="quantity">
+                                <button type="button" class="quantity-btn" id="decrease">-</button>
+                                <input type="number" name="quantity" class="quantity-value" value="1" min="1"
+                                    required />
+                                <button type="button" class="quantity-btn" id="increase">+</button>
+                            </div>
+                            <button type="submit" class="add-to-cart">Añadir al carrito</button>
+                        </div>
+
+                        <!-- Finalizar compra -->
+                        <button type="submit" class="checkout">Finalizar compra</button>
+                    </form>
+                </section>
+
             </div>
-            <!-- para esta parte utilicé un template de la página "https://www.migueltroyano.com/css/carrusel-imagenes-html-css/" -->
 
-            <form class="product-container" action="/add-to-cart" method="POST">
-                <h1 class="product-name"><%= product.titulo %></h1>
-                <p class="product-code"><%= product.id %></p>
-                <p class="product-price">$<%= product.precio.toFixed(2) %></p>
-                <p class="product-info">Cuotas sin interés</p>
+            <section class="details_">
+                <article class="article_description">
+                    <label for="section-1">
+                        <h3>Caracteristicas</h3>
+                    </label>
+                    <input type="checkbox" id="section-1" class="expand-toggle">
+                    <p>
+                        <%= product.descripcion %>
+                    </p>
+                </article>
+                <article class="article_description">
+                    <label for="section-2">
+                        <h3>Ficha técnica</h3>
+                    </label>
+                    <input type="checkbox" id="section-2" class="expand-toggle">
+                    <p style="text-align: start;">
+                        Material: Cuero y malla de alta calidad<br>
+                        Suela: Goma con patrón de tracción para mayor agarre<br>
+                        Color: Blanco, rojo fuego y negro<br>
+                        Tecnología: Amortiguación Air para máxima comodidad<br>
+                    </p>
+                </article>
+                <article class="article_description">
+                    <label for="section-3">
+                        <h3>Entregas</h3>
+                    </label>
+                    <input type="checkbox" id="section-3" class="expand-toggle">
+                    <p>
+                        Recibe tus Air Jordan "Fire Red" en un empaque exclusivo en un plazo estimado de 3 a 7 días
+                        hábiles, con seguimiento en todo momento.
+                    </p>
+                </article>
+                <article class="article_description">
+                    <label for="section-4">
+                        <h3>Valoración</h3>
+                    </label>
+                    <input type="checkbox" id="section-4" class="expand-toggle">
+                    <p>
+                        Reconocidas por su calidad y diseño, estas zapatillas tienen una calificación promedio de 4.8/5
+                        según miles de usuarios.
+                    </p>
+                </article>
+                <article class="article_description">
+                    <label for="section-5">
+                        <h3>Cambios</h3>
+                    </label>
+                    <input type="checkbox" id="section-5" class="expand-toggle">
+                    <p>
+                        Si necesitas realizar un cambio, contamos con una política sencilla que garantiza que obtengas
+                        el par perfecto.
+                    </p>
+                </article>
+            </section>
 
-                <!-- Selección de talles -->
-                <div class="sizes">
-                    <p>Talles:</p>
-                    <div class="size-options">
-                        <label>
-                            <input type="radio" name="size" value="35" required />
-                            <span class="size">35</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="size" value="36" />
-                            <span class="size">36</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="size" value="37" />
-                            <span class="size">37</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="size" value="38" />
-                            <span class="size">38</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="size" value="39" />
-                            <span class="size">39</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="size" value="40" />
-                            <span class="size">40</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="size" value="41" />
-                            <span class="size">41</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="size" value="42" />
-                            <span class="size">42</span>
-                        </label>
-                    </div>
+            <section id="another_products">
+                <div id="wrapper">
+                    <ul>
+                        <% products.forEach(producto=> { %>
+                            <a href="/products/detail/<%= producto.id %>">
+                                <li>
+                                    <div id="img_container">
+                                        <img src="<%= producto.imagen %>" alt="<%= producto.titulo %>">
+                                    </div>
+                                    <h4>
+                                        <%= producto.titulo %>
+                                    </h4>
+                                    <p>$<%= producto.precio.toFixed(2) %>
+                                    </p>
+                                </li>
+                            </a>
+                            <% }) %>
+                    </ul>
                 </div>
+            </section>
 
-                <!-- Selección de colores -->
-                <div class="colors">
-                    <p>Colores:</p>
-                    <div class="color-options">
-                        <label>
-                            <input type="radio" name="color" value="color1" required />
-                            <img src="shoe1.jpg" alt="Color 1" />
-                        </label>
-                        <label>
-                            <input type="radio" name="color" value="color2" />
-                            <img src="shoe2.jpg" alt="Color 2" />
-                        </label>
-                    </div>
-                </div>
+        </main>
 
-                <!-- Ajuste de cantidad -->
-                <div class="cart-actions">
-                    <div class="quantity">
-                        <button type="button" class="quantity-btn" id="decrease">-</button>
-                        <input type="number" name="quantity" class="quantity-value" value="1" min="1" required />
-                        <button type="button" class="quantity-btn" id="increase">+</button>
-                    </div>
-                    <button type="submit" class="add-to-cart">Añadir al carrito</button>
-                </div>
+        <%- include('../partials/footer.ejs') %>
 
-                <!-- Finalizar compra -->
-                <button type="submit" class="checkout">Finalizar compra</button>
-            </form>
-        </section>
-        <section id="codigo?postal">
+            <script>
+                document.getElementById('increase').addEventListener('click', () => {
+                    const quantityInput = document.querySelector('.quantity-value');
+                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                });
 
-            <form class="Codigo_postal">
-                <input type="text" name="CP" placeholder="Ingrese su dirección">
-                <label for="CP">
-                    <button style="
-                    background: none;
-                    border: none;
-                    text-decoration: underline;
-                    color: var(--red-color);
-                    cursor: pointer;
-                    ">
-                        Calcular envio
-                    </button>
-                </label>
-            </form>
-        </section>
-
-        <section class="details_">
-            <article class="article_description">
-                <label for="section-1">
-                    <h3>Caracteristicas</h3>
-                </label>
-                <input type="checkbox" id="section-1" class="expand-toggle">
-                <p>
-                    <%= product.descripcion %>
-                </p>
-            </article>
-            <article class="article_description">
-                <label for="section-2">
-                    <h3>Ficha técnica</h3>
-                </label>
-                <input type="checkbox" id="section-2" class="expand-toggle">
-                <p style="text-align: start;">
-                    Material: Cuero y malla de alta calidad<br>
-                    Suela: Goma con patrón de tracción para mayor agarre<br>
-                    Color: Blanco, rojo fuego y negro<br>
-                    Tecnología: Amortiguación Air para máxima comodidad<br>
-                </p>
-            </article>
-            <article class="article_description">
-                <label for="section-3">
-                    <h3>Entregas</h3>
-                </label>
-                <input type="checkbox" id="section-3" class="expand-toggle">
-                <p>
-                    Recibe tus Air Jordan "Fire Red" en un empaque exclusivo en un plazo estimado de 3 a 7 días
-                    hábiles, con seguimiento en todo momento.
-                </p>
-            </article>
-            <article class="article_description">
-                <label for="section-4">
-                    <h3>Valoración</h3>
-                </label>
-                <input type="checkbox" id="section-4" class="expand-toggle">
-                <p>
-                    Reconocidas por su calidad y diseño, estas zapatillas tienen una calificación promedio de 4.8/5
-                    según miles de usuarios.
-                </p>
-            </article>
-            <article class="article_description">
-                <label for="section-5">
-                    <h3>Cambios</h3>
-                </label>
-                <input type="checkbox" id="section-5" class="expand-toggle">
-                <p>
-                    Si necesitas realizar un cambio, contamos con una política sencilla que garantiza que obtengas
-                    el par perfecto.
-                </p>
-            </article>
-        </section>
-
-        <section id="another_products">
-            <div id="wrapper">
-                <ul>
-                    <% products.forEach(producto => { %>
-                        <a href="/products/detail/<%= producto.id %>" >
-                            <li>
-                                <div id="img_container">
-                                    <img src="<%= producto.imagen %>" alt="<%= producto.titulo %>">
-                                </div>
-                                <h4><%= producto.titulo %></h4>
-                                <p>$<%= producto.precio.toFixed(2) %></p>
-                            </li>
-                        </a>
-                    <% }) %>
-                </ul>
-            </div>
-        </section>
-
-    </main>
-
-    <%- include('../partials/footer.ejs') %>
-
-    <script>
-        document.getElementById('increase').addEventListener('click', () => {
-            const quantityInput = document.querySelector('.quantity-value');
-            quantityInput.value = parseInt(quantityInput.value) + 1;
-        });
-
-        document.getElementById('decrease').addEventListener('click', () => {
-            const quantityInput = document.querySelector('.quantity-value');
-            if (quantityInput.value > 1) {
-                quantityInput.value = parseInt(quantityInput.value) - 1;
-            }
-        });
-    </script>
+                document.getElementById('decrease').addEventListener('click', () => {
+                    const quantityInput = document.querySelector('.quantity-value');
+                    if (quantityInput.value > 1) {
+                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                    }
+                });
+            </script>
 </body>
 
 </html>
