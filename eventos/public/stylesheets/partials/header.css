@@ -101,6 +101,9 @@ header {
 /* nav con uls */
 /* nav con uls */
 #header-bottom {
+  height: 100%;
+  align-items: center;
+  display: flex;
   justify-content: center;
 
   #nav-desktop {
