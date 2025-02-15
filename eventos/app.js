@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var createError = require('http-errors');
+var session = require('express-session');
 
 // Rutas
 var indexRouter = require('./src/routes/index');
@@ -10,7 +11,8 @@ var usersRouter = require('./src/routes/users');
 var registerRouter = require('./src/routes/register');
 var payRouter = require('./src/routes/pay');
 var productAddRouter = require('./src/routes/productAdd');
-var productsRouter = require('./src/routes/products'); 
+var productsRouter = require('./src/routes/products');
+var loginRouter = require('./src/routes/login');
 
 // Cargar productos desde el archivo JSON en la carpeta 'db'
 var productos = require('./src/db/products.json');
@@ -30,13 +32,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+// Configuración de la sesión
+app.use(session({
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: true
+}));
+
 // Rutas principales
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/register', registerRouter);
 app.use('/pay', payRouter);
 app.use('/productAdd', productAddRouter);
-app.use('/products', productsRouter); // Usar el enrutador de productos
+app.use('/products', productsRouter);
+app.use('/login', loginRouter);
 
 // Manejo de errores
 app.use(function(req, res, next) {

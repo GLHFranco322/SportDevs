@@ -11,10 +11,13 @@
                         <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
                     </button>
                 </form>
-                <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+                <a href="/login">
+                    <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+                </a>
                 <a href="/pay">
                     <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="Carrito de compras">
-                </a>            </div>
+                </a>
+            </div>
         </div>
         <div id="header-bottom">
             <nav id="nav-desktop">
@@ -83,8 +86,7 @@
                     </div>
                 </ul>
                 <ul>
-                    <h3><a href="/products" 
-                        style="text-decoration: none; 
+                    <h3><a href="/products" style="text-decoration: none; 
                         color: var(--white-color);">PRODUCTOS</a></h3>
                 </ul>
             </nav>
@@ -143,26 +145,4 @@
                 </form>
             </div>
         </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const loginIcon = document.querySelector('img[src="/images/icons/fi_userlogin icon (1).png"]');
-                const loginForm = document.getElementById('login-form');
-                const closeLoginForm = document.getElementById('close-login-form');
-
-                loginIcon.addEventListener('click', function () {
-                    loginForm.style.display = 'flex';
-                });
-
-                closeLoginForm.addEventListener('click', function () {
-                    loginForm.style.display = 'none';
-                });
-
-                window.addEventListener('click', function (event) {
-                    if (event.target == loginForm) {
-                        loginForm.style.display = 'none';
-                    }
-                });
-            });
-        </script>
     </header>
