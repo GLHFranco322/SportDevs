@@ -8,4 +8,16 @@ router.get('/', productsController.index);
 // Define la ruta para los detalles del producto
 router.get('/detail/:id', productsController.detail);
 
+// Define la ruta para agregar producto
+router.get('/add', (req, res) => {
+    res.render('productAdd', { title: 'Agregar Producto' });
+});
+router.post('/add', productsController.add);
+
+// Define la ruta para editar producto
+router.get('/edit/:id', productsController.getProductById, (req, res) => {
+    res.render('productEdit', { title: 'Editar Producto', product: req.product, products: req.products });
+});
+router.post('/edit', productsController.edit);
+
 module.exports = router;
