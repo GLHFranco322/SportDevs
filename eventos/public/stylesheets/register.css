@@ -29,6 +29,7 @@ main {
     h2 {
         margin-top: 1rem;
         font-weight: 100;
+        cursor: default;
     }
 
     form {
@@ -59,12 +60,14 @@ main {
                 border: none;
                 border-radius: 5px;
                 height: 2.5rem;
-                padding: 1rem;
+                width: 100%;
                 color: var(--white-color);
                 font-size: 1rem;
                 font-family: "Lato", serif;
                 font-weight: 300;
                 font-style: normal;
+                transition: 1s ease;
+                padding: 1rem;
             }
 
             input[type="email"]:focus,
@@ -76,6 +79,8 @@ main {
                 border: 2px solid #8c8c8e;
                 font-weight: bold;
                 text-shadow: 0 0 7px var(--blue-color);
+                box-shadow: 0 0 5px var(--white-color);
+                border: none;
             }
         }
 
@@ -89,7 +94,8 @@ main {
             label {
                 grid-row: 1;
             }
-            input{
+
+            input {
                 width: 100%;
             }
         }
@@ -103,7 +109,7 @@ main {
             padding: .5rem;
             font-size: 1.5rem;
             cursor: pointer;
-            transition: .3s;
+            transition: .5s;
             font-family: "Squada One", serif;
 
             &:hover {
@@ -148,12 +154,13 @@ input[type="checkbox"]:checked::after {
     right: .2rem;
 }
 
-.adress-div{
+.adress-div {
 
-    label{
+    label {
         margin-top: 1rem;
     }
-    label:nth-child(1){
+
+    label:nth-child(1) {
         margin-top: 0;
     }
 }
@@ -161,7 +168,7 @@ input[type="checkbox"]:checked::after {
 
 @media (max-width: 1024px) {
 
-    #name-div{
+    #name-div {
         width: 100%;
         grid-template-rows: 1fr 1fr;
     }

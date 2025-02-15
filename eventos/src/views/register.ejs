@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="/stylesheets/register.css">
 </head>
 <body>
-       <%-include("./partials/header.ejs")%>
+    <%- include("./partials/header.ejs") %>
     <main>
         <article class="register">
             <div id="h2">
                 <h2>Registrarse</h2>
             </div>
-            <form action="/register" method="post">
+            <form action="/users/register" method="post">
                 <div id="email-div">
                     <label for="e-mail">Correo electrónico</label>
                     <input type="email" id="e-mail" name="email" required>
@@ -41,7 +41,7 @@
                     <input type="password" id="password" name="password" required>
                     <br>
                     <label for="re-password">Confirmar Contraseña</label>
-                    <input type="password" id="password" name="re-password" required>
+                    <input type="password" id="re-password" name="re-password" required>
                 </div>
                 <div id="subscribe-div">
                     <label>
@@ -58,8 +58,6 @@
             </form>
         </article>
     </main>
-
-        <%-include("./partials/footer.ejs")%>
-
+    <%- include("./partials/footer.ejs") %>
 </body>
 </html>
