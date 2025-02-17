@@ -43,7 +43,7 @@ main {
         gap: 1rem;
 
         #email-div,
-        .adress-div,
+        .address-div,
         #name-div,
         #lastname-div,
         #username-div,
@@ -154,7 +154,7 @@ input[type="checkbox"]:checked::after {
     right: .2rem;
 }
 
-.adress-div {
+.address-div {
 
     label {
         margin-top: 1rem;
