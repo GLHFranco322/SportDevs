@@ -20,4 +20,10 @@ router.get('/edit/:id', productsController.getProductById, (req, res) => {
 });
 router.post('/edit', productsController.edit);
 
+router.put("update/:id", productsController.update);
+
+router.delete("remove/:id", productsController.remove);
+
+router.get('/search', productsController.search);
+
 module.exports = router;

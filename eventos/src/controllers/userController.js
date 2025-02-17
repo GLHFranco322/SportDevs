@@ -2,62 +2,40 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const usersFilePath = path.join(__dirname, '../data/users.json');
-
-// Leer usuarios desde el archivo JSON
-const getUsers = () => {
-    const data = fs.readFileSync(usersFilePath, 'utf-8');
-    return JSON.parse(data);
-};
-
-// Guardar usuarios en el archivo JSON
-const saveUsers = (users) => {
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
-};
+const { v4: uuidv4, validate } = require('uuid');
 
 module.exports = {
     register: (req, res) => {
         return res.render('users/register');
     },
     processRegister: (req, res) => {
-        const { name, email, password } = req.body;
-        const users = getUsers();
+        const { name, surname, email, password} = req.body;
 
-        // Verificar si el usuario ya existe
-        const userExists = users.find(user => user.email === email);
-        if (userExists) {
-            return res.render('users/register', { error: 'El usuario ya existe' });
-        }
-
-        // Hashear la contraseña
-        const hashedPassword = bcrypt.hashSync(password, 10);
-
-        // Crear el nuevo usuario
         const newUser = {
-            id: users.length + 1,
-            email,
-            firstName: name,
-            lastName: surname,
-            username: userName,
-            password: hashedPassword,
-            subscribed: subscribe === 'yes',
-            role: 'user', // Asignar un rol por defecto
-            address: adress,
-            city,
-            country
-        };
-
-        // Guardar el nuevo usuario
-        users.push(newUser);
-        saveUsers(users);
-
-        return res.redirect('/');
+            id : uuidv4(), // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+            email : email.trim(),
+            name : name.trim(),
+            surname : surname.trim(),
+            password : bcrypt.hashSync(password, 10),
+            token : null,
+            lock : false,
+            validate : true,
+            username : username.trim(),
+            rol : 'user',
+            subscribed : subscribed,
+            address : address.trim(),
+            city : city.trim(),
+            country : country.trim()
+        }
+        
+        res.send(newUser)
+        res.send(req.body);
     },
     login: (req, res) => {
         return res.render('users/login');
     },
     processLogin: (req, res) => {
         const { email, password } = req.body;
-        const users = getUsers();
 
         const user = users.find(user => user.email === email);
 

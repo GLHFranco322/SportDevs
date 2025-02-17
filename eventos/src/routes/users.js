@@ -1,19 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var userController = require('../controllers/userController');
+const { register, login, processRegister, processLogin, logout, profile, update } = require('../controllers/userController');
 
-// Ruta para el registro de usuarios
-router.get('/register', userController.register);
-router.post('/register', userController.processRegister);
-
-// Ruta para el inicio de sesión de usuarios
-router.get('/login', userController.login);
-router.post('/login', userController.processLogin);
-
-// Ruta para el perfil de usuario
-router.get('/profile', userController.profile);
-
-// Ruta para el cierre de sesión de usuarios
-router.get('/logout', userController.logout);
+router
+    .get('/register', register)
+    .post('/processRegister', processRegister)
+    .get('/login', login)
+    .post('/processLogin', processLogin)
+    .get(`/logout`, logout)
+    .get('/profile', profile)
+    // .put('/update/:id', update)
 
 module.exports = router;
