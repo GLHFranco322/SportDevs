@@ -58,16 +58,19 @@
             <section class="product-container" id="product-container">
                 <% products.forEach(producto=> { %>
                     <article class="product">
-                        <img src="<%= producto.imagen%>" alt="<%= producto.titulo %>">
-                        <h3>
-                            <%= producto.titulo %>
-                        </h3>
-                        <p>
-                            <%= producto.descripcion %>
-                        </p>
-                        <p class="price">$<%= producto.precio.toFixed(2) %>
-                        </p>
-                        <a href="/products/detail/<%= producto.id %>" class="view_product">Ver Producto</a>                    </article>
+                        <div class="img_container">
+                            <img src="<%= producto.imagen%>" alt="<%= producto.titulo %>">
+                        </div>
+                        <div class="details_container">
+                            <h3>
+                                <%= producto.titulo %>
+                            </h3>
+                            <p class="price">$<%= producto.precio.toFixed(2) %>
+                            </p>
+                            <button>
+                                <a href="/products/detail/<%= producto.id %>" class="view_product">Ver Producto</a>                    </article>
+                            </button>
+                        </div>
                     <% }) %>
             </section>
         </main>
