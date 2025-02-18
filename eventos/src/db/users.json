@@ -188,5 +188,35 @@
     "address": "dsad",
     "city": "dsadsadsa",
     "country": "dsadsadsadsa"
+  },
+  {
+    "id": "d59cd5eb-07d6-4dcc-b896-8208b0ec5456",
+    "email": "francospiazzi96@gmail.com",
+    "name": "Franco",
+    "surname": "Spiazzi",
+    "password": "$2b$10$3/EVPFyXbZ7Au3pNSsDSE.84MaHqPHBa67yqjZ5aeyJOC7tBEEPCe",
+    "token": null,
+    "lock": false,
+    "validate": true,
+    "username": "dsadsa",
+    "rol": "user",
+    "address": "Maestro Ferreira 1445",
+    "city": "San Miguel",
+    "country": "Argentina"
+  },
+  {
+    "id": "9153f5db-e836-4918-913b-f80c24296198",
+    "email": "Damianmartinez@mostaza.com.es",
+    "name": "Franco",
+    "surname": "Spiazzi",
+    "password": "$2b$10$uALnSbkFgu0zRMMJuNHIMOpIttGqrZg4g2ZIYLRMxzTvaJ7TpIqsq",
+    "token": null,
+    "lock": false,
+    "validate": true,
+    "username": "321321321",
+    "rol": "user",
+    "address": "Maestro Ferreira 1445",
+    "city": "San Miguel",
+    "country": "Argentina"
   }
 ]
