@@ -39,7 +39,7 @@ module.exports = {
         return res.redirect('/login');
     },
     login: (req, res) => {
-        return res.render('/login');
+        return res.render('/login', { title: 'Login' })
     },
     processLogin: (req, res) => {
         const users = readJson('users.json');
@@ -47,15 +47,20 @@ module.exports = {
         const user = users.find(user => user.email === email && bcrypt.compareSync(password, user.password));
 
         if (!user) {
-            return res.render('/login', {
+            return res.render('users/login', {
                 error: "Credenciales inválidas"
             })
         }
 
-        return res.send(user)
+        req.session.userLogin = {
+            id: user.id,
+            name: user.name,
+            rol: user.rol
+        }
+
+        return res.redirect('/')
     },
-    profile: (req, res) => {
-    },
-    logout: (req, res) => {
-    }
+    profile: (req, res) => { },
+    update: (req, res) => { },
+    logout: (req, res) => { },
 };

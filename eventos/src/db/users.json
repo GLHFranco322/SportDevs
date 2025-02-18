@@ -173,50 +173,5 @@
     "address": "Maestro Ferreira 1445",
     "city": "San Miguel",
     "country": "Argentina"
-  },
-  {
-    "id": "db8f5d53-c3ca-4279-bc38-b1c599b508e6",
-    "email": "francospiazzi96@gmail.com",
-    "name": "Franco",
-    "surname": "Spiazzi",
-    "password": "$2b$10$ggZ0xmBPjFvUuQLWzU0njuo4C1QBGgORn.S9OU9B/V3JNDWoBOwmK",
-    "token": null,
-    "lock": false,
-    "validate": true,
-    "username": "dsadsa",
-    "rol": "user",
-    "address": "Maestro Ferreira 1445",
-    "city": "San Miguel",
-    "country": "Argentina"
-  },
-  {
-    "id": "fc076e7a-431f-4ac2-b58c-66905a73b53f",
-    "email": "francospiazzi96@gmail.com",
-    "name": "Franco",
-    "surname": "Spiazzi",
-    "password": "$2b$10$8kxWz9rPPlJ60z75jBzHCOHH/AM/hy5PKHGlJrLrksYZVA.RsrFHm",
-    "token": null,
-    "lock": false,
-    "validate": true,
-    "username": "dsadsa",
-    "rol": "user",
-    "address": "Maestro Ferreira 1445",
-    "city": "San Miguel",
-    "country": "Argentina"
-  },
-  {
-    "id": "2cd4be92-2532-443b-9088-bd48caacb922",
-    "email": "pepe@g.com",
-    "name": "pepe",
-    "surname": "pepito",
-    "password": "$2b$10$JFwMoNS0yfPw11tInc8fjuGVB9ttN6J3Ot3hiEHopOrKYw41INvra",
-    "token": null,
-    "lock": false,
-    "validate": true,
-    "username": "pepepepito",
-    "rol": "user",
-    "address": "pepe 123",
-    "city": "pepote",
-    "country": "pepo landia"
   }
 ]
