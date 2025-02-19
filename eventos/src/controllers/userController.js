@@ -1,22 +1,14 @@
+const fs = require('fs');
+const path = require('path');
+const bcrypt = require('bcrypt');
+const usersFilePath = path.join(__dirname, '../data/users.json');
+const { v4: uuidv4, validate } = require('uuid');
+const { saveJson, readJson } = require('../db/index');
+const { error } = require('console');
+
 
 module.exports = {
-    register: (req,res) =>{
-        return res.render('users/register')
-    },
-    processRegister:function(req,res){
-
-    },
-    login:function(req,res){
-        return res.render('users/login')
-    },
-    processLogin: function(req,res){
-     
-      
-    },
-    profile: function(req, res) {
-       
-    },
-    logout:function(req,res){
-     
-    }
-}
+    profile: (req, res) => { },
+    update: (req, res) => { },
+    logout: (req, res) => { },
+};
