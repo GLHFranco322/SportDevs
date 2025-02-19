@@ -36,10 +36,11 @@ main {
         justify-items: start;
         padding: 0 .5rem;
 
-        input[type="text"],
+        input[type="email"],
         input[type="password"] {
             background-color: var(--input-color);
-                border: none;
+                border-color: transparent;
+                outline: none;
                 border-radius: 5px;
                 height: 2.5rem;
                 width: 100%;
@@ -48,22 +49,19 @@ main {
                 font-family: "Lato", serif;
                 font-weight: 300;
                 font-style: normal;
-                transition: 1s ease;
+                transition: .5s ease;
                 padding: 1rem;
                 margin-bottom: 1rem;
         }
 
-        input[type="text"]:focus,
+        input[type="email"]:focus,
         input[type="password"]:focus {
-            background-color: transparent;
                 color: var(--white-color);
                 outline: none;
-                border: 2px solid #8c8c8e;
                 font-weight: bold;
                 text-shadow: 0 0 7px var(--blue-color);
-                box-shadow: 0 0 5px var(--white-color);
-                border: none;
-        }
+                filter: drop-shadow(0 0 5px var(--white-color));
+        } 
 
         button {
             height: 2rem;
@@ -105,4 +103,30 @@ main {
             }
         }
     }
+}
+
+/* Verificaciones */
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--red-color)!important;
+    background-image: url(../images/icons/checked_unvalid.png)!important;
+    filter: drop-shadow(0 0 5px var(--red-color))!important;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: var(--green-color)!important;
+    filter: drop-shadow(0 0 5px var(--green-color))!important;
+    background-image: url(../images/icons/checked_valid.png)!important;
+}
+
+input:valid:not(:placeholder-shown),
+input:invalid:not(:placeholder-shown) {
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+input:invalid ~ button[type="submit"]{
+    opacity: .6;
+    pointer-events: none;
 }
