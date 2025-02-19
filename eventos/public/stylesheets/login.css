@@ -107,20 +107,24 @@ main {
 
 /* Verificaciones */
 
-input:invalid:not(:placeholder-shown) {
+input[type="email"]:invalid:not(:placeholder-shown),
+input[type="password"]:invalid:not(:placeholder-shown){
     border-color: var(--red-color)!important;
     background-image: url(../images/icons/checked_unvalid.png)!important;
     filter: drop-shadow(0 0 5px var(--red-color))!important;
 }
 
-input:valid:not(:placeholder-shown) {
+input[type="email"]:valid:not(:placeholder-shown),
+input[type="password"]:valid:not(:placeholder-shown) {
     border-color: var(--green-color)!important;
     filter: drop-shadow(0 0 5px var(--green-color))!important;
     background-image: url(../images/icons/checked_valid.png)!important;
 }
 
-input:valid:not(:placeholder-shown),
-input:invalid:not(:placeholder-shown) {
+input[type="email"]:invalid:not(:placeholder-shown),
+input[type="password"]:invalid:not(:placeholder-shown),
+input[type="email"]:valid:not(:placeholder-shown),
+input[type="password"]:valid:not(:placeholder-shown) {
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: calc(100% - 10px);
