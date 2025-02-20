@@ -3,85 +3,79 @@
 @import url(../stylesheets/partials/header.css);
 @import url(../stylesheets/partials/footer.css);
 
-body {
-    background-color: var(--black-color);
-}
-
 main {
-    justify-content: center;
-    align-items: center;
-    font-family: "Squada One", serif;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-family: "squada one";
 }
 
 .register {
-    height: 80%;
-    margin: 100px auto;
-    padding: 1rem;
-    width: 80dvw;
-    max-width: 600px;
     background-color: var(--form-color);
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    padding: 1rem;
+    margin: 120px auto;
     color: #8c8c8e;
     border-radius: 5px;
     box-shadow: inset 0 0 14px var(--black-color),
         0 0 3px var(--white-color);
 
     h2 {
-        margin-top: 1rem;
         font-weight: 100;
+        margin-bottom: 1rem;
         cursor: default;
     }
 
     form {
-        width: 90%;
         height: 100%;
-        margin: 0 auto;
-        text-align: start;
         display: flex;
         flex-direction: column;
-        margin-top: 2rem;
-        gap: 1rem;
+        place-items: center;
+        justify-items: start;
+        padding: 0 .5rem;
 
-        #email-div,
-        .address-div,
-        #name-div,
-        #lastname-div,
-        #username-div,
-        #password-div {
-            display: flex;
-            flex-direction: column;
-            /* gap: .5rem; */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            background-color: var(--input-color);
+            border-color: transparent;
+            outline: none;
+            border-radius: 5px;
+            height: 2.5rem;
+            width: 100%;
+            color: var(--white-color);
             font-size: 1rem;
+            font-family: "Lato", serif;
+            font-weight: 300;
+            font-style: normal;
+            transition: .5s ease;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
 
-            input[type="text"],
-            input[type="password"],
-            input[type="email"] {
-                background-color: var(--input-color);
-                border: none;
-                border-radius: 5px;
-                height: 2.5rem;
-                width: 100%;
-                color: var(--white-color);
-                font-size: 1rem;
-                font-family: "Lato", serif;
-                font-weight: 300;
-                font-style: normal;
-                transition: 1s ease;
-                padding: 1rem;
-            }
+        input[type="email"]:focus,
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            color: var(--white-color);
+            outline: none;
+            font-weight: bold;
+            text-shadow: 0 0 7px var(--blue-color);
+            filter: drop-shadow(0 0 5px var(--white-color));
+        }
 
-            input[type="email"]:focus,
-            input[type="text"]:focus,
-            input[type="password"]:focus {
-                background-color: transparent;
-                color: var(--white-color);
-                outline: none;
-                border: 2px solid #8c8c8e;
-                font-weight: bold;
-                text-shadow: 0 0 7px var(--blue-color);
-                box-shadow: 0 0 5px var(--white-color);
-                border: none;
-            }
+        #subscribed, #terms{
+            text-align: start;
+            width: 100%;
+            padding-bottom: 1rem;
+        }
+
+        .name-surname{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            max-width: 100%;
         }
 
         #name-div {
@@ -102,20 +96,26 @@ main {
 
 
         button {
-            background-color: #242428;
-            color: #8c8c8e;
-            border: none;
+            height: 2rem;
+            background-color: var(--input-color);
             border-radius: 5px;
-            padding: .5rem;
-            font-size: 1.5rem;
+            border: none;
             cursor: pointer;
-            transition: .5s;
-            font-family: "Squada One", serif;
+            transition: .5s ease;
+            align-items: center;
+            width: 100%;
+            font-family: 'squada one';
+            font-size: 1rem;
+            color: var(--grey-color);
+            grid-column: 1/3;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
 
             &:hover {
-                color: var(--white-color);
                 background-color: var(--blue-color);
-                filter: drop-shadow(0 0 5px var(--blue-color));
+                box-shadow: 0 0 7px var(--blue-color);
+                color: var(--white-color);
             }
         }
 
@@ -172,4 +172,37 @@ input[type="checkbox"]:checked::after {
         width: 100%;
         grid-template-rows: 1fr 1fr;
     }
+}
+
+/* Verificaciones */
+
+input[type="email"]:invalid:not(:placeholder-shown),
+input[type="password"]:invalid:not(:placeholder-shown),
+input[type="text"]:invalid:not(:placeholder-shown) {
+    border-color: var(--red-color) !important;
+    background-image: url(../images/icons/checked_unvalid.png) !important;
+    filter: drop-shadow(0 0 5px var(--red-color)) !important;
+}
+
+input[type="email"]:valid:not(:placeholder-shown),
+input[type="password"]:valid:not(:placeholder-shown),
+input[type="text"]:valid:not(:placeholder-shown) {
+    border-color: var(--green-color) !important;
+    filter: drop-shadow(0 0 5px var(--green-color)) !important;
+    background-image: url(../images/icons/checked_valid.png) !important;
+}
+
+input[type="email"]:invalid:not(:placeholder-shown),
+input[type="password"]:invalid:not(:placeholder-shown),
+input[type="email"]:valid:not(:placeholder-shown),
+input[type="password"]:valid:not(:placeholder-shown),
+input[type="text"]:valid:not(:placeholder-shown) {
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+input:invalid~button[type="submit"] {
+    opacity: .6;
+    pointer-events: none;
 }
