@@ -34,10 +34,14 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Configuración de la sesión
 app.use(session({
-  secret: 'your_secret_key',
+  secret: 'passmil_123',
   resave: false,
   saveUninitialized: true,
-  coockie: { secure: false }
+  cookie: {
+    maxAge: 3600000,          // Tiempo máximo de la cookie (1 hora en ms)
+    httpOnly: true,           // Evita acceso desde JavaScript del cliente
+    secure: false             // Usar HTTPS cuando esté disponible
+  }
 }));
 
 // Rutas principales

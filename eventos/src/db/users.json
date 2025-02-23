@@ -158,5 +158,20 @@
     "address": "159 Cherry St",
     "city": "San Jose",
     "country": "USA"
+  },
+  {
+    "id": "123cce32-a362-4130-a542-df653d2b45ba",
+    "email": "francospiazzi1996@hotmail.com",
+    "name": "Franco",
+    "surname": "Spiazzi",
+    "password": "$2b$10$P3ssG9IoONC7VbrY45QOdOJ.XPaUfw1p4l91dWyVI87d4naN7I2Ve",
+    "token": null,
+    "lock": false,
+    "validate": true,
+    "username": "dsds",
+    "rol": "admin",
+    "address": "Maestro Ferreira 1445",
+    "city": "San Miguel",
+    "country": "Argentina"
   }
 ]

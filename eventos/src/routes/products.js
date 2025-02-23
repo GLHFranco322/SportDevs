@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/productsController');
+const adminCheck = require('../middlewares/adminCheck');
 
 // Define la ruta para la página de productos
 router.get('/', productsController.index);
@@ -9,16 +10,15 @@ router.get('/', productsController.index);
 router.get('/detail/:id', productsController.detail);
 
 // Define la ruta para agregar producto
-router.get('/add', (req, res) => {
-    res.render('productAdd', { title: 'Agregar Producto' });
-});
-router.post('/add', productsController.add);
+router
+    .get('/add', adminCheck, productsController.add)
+    .post('/productAdding', productsController.productAdding);
 
 // Define la ruta para editar producto
-router.get('/edit/:id', productsController.getProductById, (req, res) => {
+router.get('/edit/:id',adminCheck, productsController.getProductById, (req, res) => {
     res.render('productEdit', { title: 'Editar Producto', product: req.product, products: req.products });
 });
-router.post('/edit', productsController.edit);
+router.post('/edit', adminCheck,productsController.edit);
 
 router.put("update/:id", productsController.update);
 

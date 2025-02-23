@@ -26,6 +26,9 @@ const productsController = {
         next();
     },
     add: (req, res) => {
+        res.render('user-views/productAdd', { title: 'Agregar Producto', categories });
+    },
+    productAdding: (req, res) => {
 
         const {imagen, titulo, precio, descripcion, descuento, categoria, subcategoria, marca, stock} = req.body;
         const newProduct = {
