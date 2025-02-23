@@ -28,6 +28,10 @@ module.exports = {
             rol: user.rol
         };
 
+        if (req.session.userLogin.rol === 'admin') {
+            return res.redirect('/admin');
+        }
+        
         return res.redirect('/');
     }
 };

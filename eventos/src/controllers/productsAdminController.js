@@ -1,9 +1,12 @@
+const fs = require('fs');
+const path = require('path');
 const { readJson, saveJson } = require('../db/index.js');
-const products = require('../db/products.json');
+const productsFilePath = path.join(__dirname, '../db/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = {
     list: (req, res) => {
-        return res.render('productsAdmin', { title: 'Administrar productos' });
+        return res.render('user-views/productsAdmin', { title: 'Administrar productos', products });
     },
     create: (req, res) => {
         return res.render('productCreate', { title: 'Crear producto' });
@@ -15,42 +18,39 @@ module.exports = {
         res.render('user-views/productAdd', { title: 'Agregar Producto', categories });
     },
     productAdding: (req, res) => {
-        const {imagen, titulo, precio, descripcion, descuento, categoria, subcategoria, marca, stock} = req.body;
+        const { imagen, titulo, precio, descripcion, descuento, categoria, subcategoria, marca, stock } = req.body;
         const newProduct = {
             id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
-            imagen : imagen.trim(),
-            titulo : titulo.trim(),
-            descripcion : descripcion.trim(),
-            precio : +precio,
-            descuento : +descuento,
+            imagen: imagen.trim(),
+            titulo: titulo.trim(),
+            descripcion: descripcion.trim(),
+            precio: +precio,
+            descuento: +descuento,
             categoria,
             subcategoria,
             marca,
             stock
-        }
+        };
         products.push(newProduct);
 
         fs.writeFileSync(path.join(__dirname, '../db/products.json'), JSON.stringify(products, null, 2));
 
         return res.redirect('/products/detail/' + newProduct.id);
-
     },
     edit: (req, res) => {
-        const products = readJson('products.json');
-        const productIndex = products.findIndex(product => product.id === +req.body.id);
-        if (productIndex === -1) {
-            return res.status(404).send('Product not found');
+        const productId = +req.params.id;
+        const product = products.find(product => product.id === productId);
+        if (!product) {
+            return res.render('user-views/productsAdmin', { title: 'Administrar productos', products, error: 'Producto no encontrado' });
         }
-        products[productIndex] = {
-            ...products[productIndex],
-            name: req.body.name,
-            price: req.body.price,
-            description: req.body.description,
-            technical_sheet: req.body.technical_sheet,
-            category: req.body.category,
-            color: req.body.color
-        };
-        saveJson('products.json', products);
-        res.redirect('/products');
+        return res.render('productEdit', { title: 'Editar producto', product });
+    },
+    search: (req, res) => {
+        const productId = +req.query.productId;
+        const product = products.find(product => product.id === productId);
+        if (!product) {
+            return res.render('user-views/productsAdmin', { title: 'Administrar productos', products, error: 'Producto no encontrado' });
+        }
+        return res.render('user-views/productsAdmin', { title: 'Administrar productos', products: [product] });
     }
-}
+};
