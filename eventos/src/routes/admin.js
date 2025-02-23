@@ -1,7 +1,14 @@
+const producAdminController = require('../controllers/productsAdminController');
 const express = require('express');
 const router = express.Router();
-const adminController = require('../controllers/adminController');
+const adminCheck = require('../middlewares/adminCheck');
 
-router.get("/list", list);
+router
+    .get('/', producAdminController.list)
+    .get('/create', producAdminController.create)
+    .get('/edit', producAdminController.edit)
+    .get('/add', producAdminController.add)
+    .post('/add', producAdminController.productAdding)
+    .put('/edit', producAdminController.edit)
 
-modelu.exports = router;
+module.exports = router;

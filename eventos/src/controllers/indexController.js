@@ -8,14 +8,5 @@ module.exports = {
         }
         );
         return res.render('index', { title: 'home' });
-    },
-    admin: (req, res) => {
-        return res.render('admin', { title: 'admin' });
-    },
-    adminProducts: (req, res) => {
-        return res.render('adminProducts', { title: 'adminProducts' });
-    },
-    adminUsers: (req, res) => {
-        return res.render('adminUsers', { title: 'adminUsers' });
-    },
+    }
 }

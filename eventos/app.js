@@ -12,6 +12,7 @@ var registerRouter = require('./src/routes/register');
 var payRouter = require('./src/routes/pay');
 var productsRouter = require('./src/routes/products');
 var loginRouter = require('./src/routes/login');
+var adminRouter = require('./src/routes/admin');
 
 // Cargar productos desde el archivo JSON en la carpeta 'db'
 var productos = require('./src/db/products.json');
@@ -38,9 +39,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 3600000,          // Tiempo máximo de la cookie (1 hora en ms)
-    httpOnly: true,           // Evita acceso desde JavaScript del cliente
-    secure: false             // Usar HTTPS cuando esté disponible
+    maxAge: 3600000,
+    httpOnly: true,
+    secure: false
   }
 }));
 
@@ -51,6 +52,7 @@ app.use('/register', registerRouter);
 app.use('/pay', payRouter);
 app.use('/products', productsRouter);
 app.use('/login', loginRouter);
+app.use('/admin', adminRouter);
 
 // Manejo de errores
 app.use(function(req, res, next) {

@@ -7,8 +7,5 @@ const adminCheck = require('../middlewares/adminCheck.js');
 /* GET home page. */
 router
     .get('/', index)
-    .get('/admin', adminCheck, admin)
-    .get('/admin/products', adminCheck, adminProducts)
-    .get('/admin/users', adminCheck, adminUsers);
 
 module.exports = router;
