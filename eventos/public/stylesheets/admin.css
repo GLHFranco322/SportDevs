@@ -81,6 +81,11 @@ main {
         justify-content: center;
         padding: .5rem;
         margin: 0 auto;
+        
+        a{
+            text-decoration: none;
+            color: var(--grey-color);
+        }
 
         &:hover {
             background-color: var(--blue-color);

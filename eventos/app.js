@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var createError = require('http-errors');
 var session = require('express-session');
+var methodOverride = require('method-override'); // Importar method-override
 
 // Rutas
 var indexRouter = require('./src/routes/index');
@@ -31,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
+app.use(methodOverride('_method')); // Configurar method-override
 
 // Configuración de la sesión
 app.use(session({
