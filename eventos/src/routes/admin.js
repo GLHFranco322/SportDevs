@@ -9,7 +9,7 @@ router
     .get('/edit/:id', producAdminController.edit) // Ruta para mostrar el formulario de edición
     .put('/edit/:id', producAdminController.update) // Ruta para procesar la edición
     .get('/add', producAdminController.add)
-    .post('/add', producAdminController.productAdding)
+    .post('/productAdding', producAdminController.productAdding)
     .get('/products/search', producAdminController.search); // Nueva ruta para buscar productos
 
 module.exports = router;

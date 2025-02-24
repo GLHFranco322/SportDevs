@@ -3,7 +3,7 @@ const path = require('path');
 const { readJson, saveJson } = require('../db/index.js');
 const productsFilePath = path.join(__dirname, '../db/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const toThousand = require('../utils/toThousand'); // Asegúrate de que esta ruta sea correcta
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     list: (req, res) => {

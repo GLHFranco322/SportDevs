@@ -3,4 +3,112 @@
 
 main{
     background-color: var(--black-color);
+    font-family: 'lato';
+}
+
+#product {
+    background-color: var(--form-color);
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    margin: 120px auto;
+    color: #8c8c8e;
+    border-radius: 5px;
+    box-shadow: inset 0 0 14px var(--black-color),
+        0 0 3px var(--white-color);
+
+    article{
+        width: 100%;
+        margin: 1rem 0;
+
+        img{
+            height: 10rem;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    }
+
+    h2 {
+        font-weight: 100;
+        margin-bottom: 1rem;
+        cursor: default;
+    }
+
+    form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        justify-items: start;
+        padding: 0 .5rem;
+
+        input,
+        textarea {
+            background-color: var(--input-color);
+            border-color: transparent;
+            outline: none;
+            border-radius: 5px;
+            height: 2.5rem;
+            width: 100%;
+            color: var(--white-color);
+            font-size: 1rem;
+            font-family: "Lato", serif;
+            font-weight: 300;
+            font-style: normal;
+            transition: .5s ease;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            color: var(--white-color);
+            outline: none;
+            font-weight: bold;
+            text-shadow: 0 0 7px var(--blue-color);
+            filter: drop-shadow(0 0 5px var(--white-color));
+        }
+
+        button {
+            height: 2rem;
+            background-color: var(--input-color);
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: .5s ease;
+            align-items: center;
+            width: 100%;
+            font-family: 'squada one';
+            font-size: 1rem;
+            color: var(--grey-color);
+            grid-column: 1/3;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+
+            &:hover {
+                background-color: var(--blue-color);
+                box-shadow: 0 0 7px var(--blue-color);
+                color: var(--white-color);
+            }
+        }
+
+        p {
+            grid-column: 1/3;
+            width: 100%;
+            cursor: default;
+
+            a {
+                color: var(--blue-color);
+                text-decoration: none;
+                transition: .5s ease;
+
+                &:hover {
+                    color: var(--red-color);
+                }
+            }
+        }
+    }
 }

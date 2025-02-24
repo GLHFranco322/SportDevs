@@ -3,95 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link rel="stylesheet" href="/stylesheets/productEdit.css">
     <script src="https://kit.fontawesome.com/91e0160591.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= title %>
-    </title>
+    <title><%= title %></title>
 </head>
 
 <body>
-    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/headerAdmin') %>
 
-        <main>
-            <section id="form_loading_image">
+    <main>
+        <section id="product">
+            <h1>El id del producto es <%= products.length + 1 %></h1>
+            <form action="/admin/productAdding" method="POST" id="form_product" enctype="multipart/form-data">
+                <article>
+                    <img src="<%= product.imagen %>" alt="Imagen del producto">
+                </article>
+                <label for="titulo">Nombre del producto:</label>
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+                <input type="text" id="titulo" name="titulo" value="<%= product.titulo %>" required>
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" value="<%= product.precio %>" required>
+                <label for="descuento">Descuento:</label>
+                <input type="number" id="descuento" name="descuento" value="<%= product.descuento %>" required>
+                <label for="descripcion">Descripción:</label>
+                <textarea style="height: max-content;" id="descripcion" name="descripcion" required><%= product.descripcion %></textarea>
+                <label for="categoria">Categoría:</label>
+                <input type="text" id="categoria" name="categoria" value="<%= product.categoria %>" required>
+                <label for="subcategoria">Subcategoría:</label>
+                <input type="text" id="subcategoria" name="subcategoria" value="<%= product.subcategoria %>" required>
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca" value="<%= product.marca %>" required>
+                <laber for="stock">Stock:</laber>
+                <input type="number" id="stock" name="stock" value="<%= product.stock %>" required>
+                <button type="submit">Editar producto</button>
+            </form>
+        </section>
+    </main>
 
-                <!-- Opciones de formulario -->
-                <form id="form_title">
-                    <input type="radio" id="h2_option1" name="option" value="option_1" style="display: none;">
-                    <label for="h2_option1">
-                        <h2>Cargar</h2>
-                    </label>
-
-                </form>
-
-                <!-- Formulario para cargar productos -->
-                <form action="#" id="form_loading" method="POST" style="display: none;">
-                    <div>
-                        <label for="productName">Nombre del producto</label>
-                        <input type="text" name="productName" required>
-                    </div>
-
-                    <div>
-                        <label for="description">Características</label>
-                        <input type="text" name="description" placeholder="Detalle" required>
-                    </div>
-
-                    <div>
-                        <label for="technical_sheet">Ficha técnica</label>
-                        <textarea name="technical_sheet" id="technical_sheet"
-                            placeholder="Ingresa toda la información del producto" required></textarea>
-                    </div>
-
-                    <div class="form-file">
-                        <div class="form-file__action">
-                            <label for="image" class="title">Foto de publicación</label>
-                            <input type="file" name="image" id="image" />
-                        </div>
-                        <div class="form-file__result" id="result-image">
-                            <img id="img-result" alt="" />
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="categorys">Categoría</label>
-                        <select id="categorys" name="categorys" required>
-                            <option value="categoria1">Categoría 1</option>
-                            <option value="categoria2">Categoría 2</option>
-                            <option value="categoria3">Categoría 3</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="color">Color</label>
-                        <select id="color" name="color" required>
-                            <option value="color1" style="background: var(--red-color);">Rojo</option>
-                            <option value="color2" style="background: var(--black-color);">Negro</option>
-                            <option value="color3" style="background-color: rgba(0, 128, 0, 0.274);">Color esperanza
-                            </option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="price">Precio</label>
-                        <input type="number" id="price" name="price" placeholder="Ej. 500" min="0" step="0.01" required>
-                    </div>
-
-                    <div>
-                        <button type="submit" class="button-confirm">Confirmar</button>
-                    </div>
-                </form>
-
-                <!-- Formulario para editar productos -->
-                
-            </section>
-        </main>
-
-        <!-- Incluye el script externo -->
-        <script src="/scripts/productAdd.js"></script>
-
-        <%- include('../partials/footer.ejs') %>
+    <script src="/scripts/productAdd.js"></script>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>
