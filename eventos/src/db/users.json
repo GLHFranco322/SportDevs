@@ -173,5 +173,20 @@
     "address": "Maestro Ferreira 1445",
     "city": "San Miguel",
     "country": "Argentina"
+  },
+  {
+    "id": "a6627900-e5f0-4cd3-bda4-283d53e0c5bc",
+    "email": "freedonzonestudio@gmail.com",
+    "name": "franco",
+    "surname": "spiazzi",
+    "password": "$2b$10$q2Gap1z/Kd9HQsQmvyVCv.Nwix.GU1veK19tnSTboDl0uZHkNb/q.",
+    "token": null,
+    "lock": false,
+    "validate": true,
+    "username": "GLHFranco",
+    "rol": "user",
+    "address": "Maestro Ferreira 1445",
+    "city": "San Miguel",
+    "country": "Argentina"
   }
 ]

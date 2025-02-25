@@ -14,9 +14,11 @@ main {
   height: max-content;
   border: 0;
   position: relative;
+  height: calc(100vh - 170px);
+
 
   a{
-    height: calc(100vh - 200px);
+    height: 100%;
     
     img {
       border: 0;

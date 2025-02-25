@@ -4,12 +4,11 @@ const producAdminController = require('../controllers/productsAdminController');
 const adminCheck = require('../middlewares/adminCheck');
 
 router
-    .get('/', producAdminController.list)
-    .get('/create', producAdminController.create)
-    .get('/edit/:id', producAdminController.edit) // Ruta para mostrar el formulario de edición
-    .put('/edit/:id', producAdminController.update) // Ruta para procesar la edición
-    .get('/add', producAdminController.add)
-    .post('/productAdding', producAdminController.productAdding)
-    .get('/products/search', producAdminController.search); // Nueva ruta para buscar productos
+    .get('/', adminCheck, producAdminController.list)
+    .get('/add', adminCheck, producAdminController.add)
+    .post('/productAdding', adminCheck, producAdminController.productAdding)
+    .get('/edit/:id', adminCheck, producAdminController.edit)
+    .put('/edit/:id', adminCheck, producAdminController.update)
+    .get('/products/search', adminCheck, producAdminController.search); // Nueva ruta para buscar productos
 
 module.exports = router;

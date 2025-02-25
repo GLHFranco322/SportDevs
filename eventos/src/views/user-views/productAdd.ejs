@@ -14,36 +14,40 @@
 
     <main>
         <section id="product">
-            <h1>El id del producto es <%= products.length + 1 %></h1>
-            <form action="/admin/productAdding" method="POST" id="form_product" enctype="multipart/form-data">
-                <article>
-                    <img src="<%= product.imagen %>" alt="Imagen del producto">
-                </article>
+            <h1>Agregar nuevo producto</h1>
+            <form action="/admin/productAdding" method="POST" id="form_product">
+                
                 <label for="titulo">Nombre del producto:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                
                 <label for="imagen">Imagen:</label>
                 <input type="file" id="imagen" name="imagen" accept="image/*">
-                <input type="text" id="titulo" name="titulo" value="<%= product.titulo %>" required>
+                
                 <label for="precio">Precio:</label>
-                <input type="number" id="precio" name="precio" value="<%= product.precio %>" required>
+                <input type="number" id="precio" name="precio" required>
+                
                 <label for="descuento">Descuento:</label>
-                <input type="number" id="descuento" name="descuento" value="<%= product.descuento %>" required>
+                <input type="number" id="descuento" name="descuento" required>
+                
                 <label for="descripcion">Descripción:</label>
-                <textarea style="height: max-content;" id="descripcion" name="descripcion" required><%= product.descripcion %></textarea>
+                <textarea style="height: max-content;" id="descripcion" name="descripcion" required></textarea>
+                
                 <label for="categoria">Categoría:</label>
-                <input type="text" id="categoria" name="categoria" value="<%= product.categoria %>" required>
+                <input type="text" id="categoria" name="categoria" required>
+                
                 <label for="subcategoria">Subcategoría:</label>
-                <input type="text" id="subcategoria" name="subcategoria" value="<%= product.subcategoria %>" required>
+                <input type="text" id="subcategoria" name="subcategoria" required>
+                
                 <label for="marca">Marca:</label>
-                <input type="text" id="marca" name="marca" value="<%= product.marca %>" required>
-                <laber for="stock">Stock:</laber>
-                <input type="number" id="stock" name="stock" value="<%= product.stock %>" required>
-                <button type="submit">Editar producto</button>
+                <input type="text" id="marca" name="marca" required>
+                
+                <label for="stock">Stock:</label>
+                <input type="number" id="stock" name="stock" required>
+                
+                <button type="submit">Agregar producto</button>
             </form>
         </section>
     </main>
-
-    <script src="/scripts/productAdd.js"></script>
-    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

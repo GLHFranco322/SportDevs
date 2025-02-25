@@ -1,18 +1,18 @@
 const fs = require('fs');
 const path = require('path');
-const { readJson, saveJson } = require('../db/index.js');
 const productsFilePath = path.join(__dirname, '../db/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const { saveJson, readJson } = require('../db/index');
+
 
 module.exports = {
     list: (req, res) => {
+        const products = readJson('products.json');
         return res.render('user-views/productsAdmin', { title: 'Administrar productos', products });
     },
-    create: (req, res) => {
-        return res.render('productCreate', { title: 'Crear producto' });
-    },
     edit: (req, res) => {
+        const products = readJson('products.json');
+
         const productId = +req.params.id;
         const product = products.find(product => product.id === productId);
         if (!product) {
@@ -21,6 +21,8 @@ module.exports = {
         return res.render('productEdit', { title: 'Editar producto', product });
     },
     update: (req, res) => {
+        const products = readJson('products.json');
+
         const productId = +req.params.id;
         const { imagen, titulo, precio, descripcion, descuento, categoria, subcategoria, marca, stock } = req.body;
         const productIndex = products.findIndex(product => product.id === productId);
@@ -29,9 +31,9 @@ module.exports = {
         }
         products[productIndex] = {
             ...products[productIndex],
-            imagen: imagen.trim(),
-            titulo: titulo.trim(),
-            descripcion: descripcion.trim(),
+            imagen: imagen ? imagen.trim() : products[productIndex].imagen,
+            titulo: titulo ? titulo.trim() : products[productIndex].titulo,
+            descripcion: descripcion ? descripcion.trim() : products[productIndex].descripcion,
             precio: +precio,
             descuento: +descuento,
             categoria,
@@ -43,10 +45,18 @@ module.exports = {
         return res.redirect('/admin');
     },
     add: (req, res) => {
-        res.render('user-views/productAdd', { title: 'Agregar Producto', categories });
+        res.render('user-views/productAdd', { title: 'Agregar Producto' });
     },
     productAdding: (req, res) => {
+        const products = readJson('products.json');
+
         const { imagen, titulo, precio, descripcion, descuento, categoria, subcategoria, marca, stock } = req.body;
+
+        // Validar que todos los campos estén presentes
+        if (!imagen || !titulo || !precio || !descripcion || !descuento || !categoria || !subcategoria || !marca || !stock) {
+            return res.status(400).send('Todos los campos son obligatorios');
+        }
+
         const newProduct = {
             id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
             imagen: imagen.trim(),
@@ -60,10 +70,12 @@ module.exports = {
             stock
         };
         products.push(newProduct);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        saveJson('products.json', products);
         return res.redirect('/products/detail/' + newProduct.id);
     },
     search: (req, res) => {
+        const products = readJson('products.json');
+
         const productId = +req.query.productId;
         const product = products.find(product => product.id === productId);
         if (!product) {
