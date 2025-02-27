@@ -8,7 +8,7 @@ router
     // .post('/processRegister', processRegister)
     // .get('/login', login)
     // .post('/processLogin', processLogin)
-    .get(`/logout`, logout)
+    // .get(`/logout`, logout)
     .get('/profile', profile)
     // .put('/update/:id', update)
 

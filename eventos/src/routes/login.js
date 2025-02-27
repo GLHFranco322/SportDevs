@@ -7,6 +7,6 @@ const userSessionCheck = require('../middlewares/userSessionCheck');
 router
   .get('/', userSessionCheck, login)
   .post('/processLogin', processLogin)
-  .post('/logout', logout); // No aplicar userSessionCheck aquí
+  .get('/logout', logout);
 
 module.exports = router;

@@ -34,7 +34,10 @@ module.exports = {
         return res.redirect('/');
     },
     logout: (req, res) => {
-        req.session.userLogin = null;
-        return res.redirect('/login');
+        // req.session.userLogin = null;
+        // return res.redirect('/login');
+        req.session.destroy();
+        res.clearCookie("userLogin"); 
+        res.redirect("/login")
     }
 };
