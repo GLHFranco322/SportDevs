@@ -188,5 +188,35 @@
     "address": "Maestro Ferreira 1445",
     "city": "San Miguel",
     "country": "Argentina"
+  },
+  {
+    "id": "b5be5394-d23a-449a-bfa4-91618f803a95",
+    "email": "pepito@g.com",
+    "name": "Franco",
+    "surname": "Spiazzi",
+    "password": "$2b$10$Lu2dP2bXQRocE2Zx/WYkJ.T5mJfw/.RYYGqWPRTW6q126DBRJ7aya",
+    "token": null,
+    "lock": false,
+    "validate": true,
+    "username": "pepe1",
+    "rol": "user",
+    "address": "Maestro Ferreira 1445",
+    "city": "San Miguel",
+    "country": "Argentina"
+  },
+  {
+    "id": "6049605c-7db3-4a7a-8a25-dbabeea91b99",
+    "email": "pepito@g.com",
+    "name": "Franco",
+    "surname": "Spiazzi",
+    "password": "$2b$10$K5rMmU//0gmveDOxGel/huiysurIU71RTV4DACWbx5SL0qrFmebIS",
+    "token": null,
+    "lock": false,
+    "validate": true,
+    "username": "pepe1",
+    "rol": "user",
+    "address": "Maestro Ferreira 1445",
+    "city": "San Miguel",
+    "country": "Argentina"
   }
 ]

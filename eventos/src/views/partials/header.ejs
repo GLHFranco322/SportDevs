@@ -1,24 +1,28 @@
 <body>
     <header style="height: 100px">
-        <div id="header-top">
-            <a href="/" style="text-decoration: none;">
-                <h1>SPORT<span>DEVS</span></h1>
-            </a>
-            <div>
-                <form action="search">
-                    <input type="text" name="search">
-                    <button type="submit">
-                        <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
-                    </button>
-                </form>
-                <a href="/login">
-                    <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+        <% if (req.session.userLogin) { %>
+            <%- include('./headerUser') %>
+        <% } else { %>
+            <div id="header-top">
+                <a href="/" style="text-decoration: none;">
+                    <h1>SPORT<span>DEVS</span></h1>
                 </a>
-                <a href="/pay">
-                    <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="Carrito de compras">
-                </a>
+                <div>
+                    <form action="search">
+                        <input type="text" name="search">
+                        <button type="submit">
+                            <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                        </button>
+                    </form>
+                    <a href="/login">
+                        <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+                    </a>
+                    <a href="/pay">
+                        <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="Carrito de compras">
+                    </a>
+                </div>
             </div>
-        </div>
+        <% } %>
         <div id="header-bottom">
             <nav id="nav-desktop">
                 <ul>
@@ -125,5 +129,5 @@
                 </nav>
             </section>
         </div>
-        
     </header>
+</body>
