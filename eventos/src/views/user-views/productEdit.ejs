@@ -15,7 +15,7 @@
     <main>
         <section id="product">
             <h1>El id del producto es <%= product.id %></h1>
-            <form action="/admin/edit/<%= product.id %>?_method=PUT" method="POST" id="form_product" enctype="multipart/form-data">
+            <form action="/admin/update/<% product.id %>" method="POST" id="form_product" enctype="multipart/form-data">
                 <article>
                     <img src="<%= product.imagen %>" alt="Imagen del producto">
                 </article>
