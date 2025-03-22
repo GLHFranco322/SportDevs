@@ -8,7 +8,7 @@ const { error } = require('console');
 
 module.exports = {
     login: (req, res) => {
-        return res.render('login', { title: 'Login' });
+        return res.render('login', { title: 'Login', req });
     },
     processLogin: (req, res) => {
         const users = readJson('users.json');
@@ -16,9 +16,8 @@ module.exports = {
         const user = users.find(user => user.email === email && bcrypt.compareSync(password, user.password));
 
         if (!user) {
-            return res.render('login', {
-                error: "Credenciales inválidas",
-                title: 'Login'
+            return res.redirect('login', {
+                error: "Credenciales inválidas"
             });
         }
 
@@ -33,5 +32,12 @@ module.exports = {
         }
         
         return res.redirect('/');
+    },
+    logout: (req, res) => {
+        // req.session.userLogin = null;
+        // return res.redirect('/login');
+        req.session.destroy();
+        res.clearCookie("userLogin"); 
+        res.redirect("/login")
     }
 };

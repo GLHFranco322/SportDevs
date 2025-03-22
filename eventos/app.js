@@ -46,6 +46,10 @@ app.use(session({
   }
 }));
 
+// Middleware para agregar req a res.locals
+const addReqToLocals = require('./src/middlewares/addreqToLocals');
+app.use(addReqToLocals);
+
 // Rutas principales
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

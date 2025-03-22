@@ -200,12 +200,13 @@ main {
 @media screen and (max-width: 1024px) {
 
   #section_banner {
+    height: max-content;
 
     a {
-      height: 40dvh;
+      height: max-content;
 
       img {
-        height: 100%;
+        /* height: 600%; */
         border: none;
       }
     }

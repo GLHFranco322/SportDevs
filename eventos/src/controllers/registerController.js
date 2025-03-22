@@ -37,6 +37,6 @@ module.exports = {
         users.push(newUser);
         saveJson('users.json', users);
 
-        return res.redirect('/login'); //fijate la barra
+        return res.redirect('/login');
     }
 }
