@@ -69,6 +69,8 @@ Para el backend utilizamos una arquitectura de microservicios con Node.js y Expr
 
 - Node.js
 - Express
+- SQL en MySQL Workbench
+- Sequelize
 
 ***Diseño:***
 - Figma
