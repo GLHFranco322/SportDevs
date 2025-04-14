@@ -1,24 +1,53 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const { v4: uuidv4, validate } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 const { saveJson, readJson } = require('../db/index');
-const { error } = require('console');
-const { title } = require('process');
 
 module.exports = {
     register: (req, res) => {
-        return res.render('register', {title: 'register'});
+        return res.render('register', { title: 'register', errors: [] }); // Pasa un array vacío por defecto
     },
     processRegister: (req, res) => {
+        const users = readJson('users.json');
+        const { name, surname, email, password, username, subscribed, address, city, country, 're-password': rePassword } = req.body;
 
-        const users = readJson('users.json')
+        // Validaciones
+        const errors = [];
 
-        const { name, surname, email, password, username, subscribed, address, city, country } = req.body;
+        if (!name || !surname || !email || !password || !username || !address || !city || !country) {
+            errors.push('Todos los campos son obligatorios.');
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errors.push('El correo electrónico no es válido.');
+        }
+
+        if (password !== rePassword) {
+            errors.push('Las contraseñas no coinciden.');
+        }
+
+        if (password.length < 6) {
+            errors.push('La contraseña debe tener al menos 6 caracteres.');
+        }
+
+        const emailExists = users.some(user => user.email === email.trim());
+        if (emailExists) {
+            errors.push('El correo electrónico ya está registrado.');
+        }
+
+        const usernameExists = users.some(user => user.username === username.trim());
+        if (usernameExists) {
+            errors.push('El nombre de usuario ya está registrado.');
+        }
+
+        if (errors.length > 0) {
+            return res.render('register', { title: 'register', errors }); // Pasa los errores a la vista
+        }
 
         const newUser = {
-            id: uuidv4(), // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+            id: uuidv4(),
             email: email.trim(),
             name: name.trim(),
             surname: surname.trim(),
@@ -28,7 +57,7 @@ module.exports = {
             validate: true,
             username: username.trim(),
             rol: 'user',
-            subscribed: subscribed,
+            subscribed: subscribed || false,
             address: address.trim(),
             city: city.trim(),
             country: country.trim()
@@ -39,4 +68,4 @@ module.exports = {
 
         return res.redirect('/login');
     }
-}
+};

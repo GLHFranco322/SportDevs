@@ -12,6 +12,15 @@
         <article class="register">
             <h2>Registrarse</h2>
             <form id="register-form" action="register/processRegister" method="post">
+
+                <% if (errors && errors.length > 0) { %>
+                    <ul class="errors">
+                        <% errors.forEach(error => { %>
+                            <li><%= error %></li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+
                 <label for="e-mail">Correo electrónico</label>
                 <input type="email" id="e-mail" name="email" required placeholder="">
                 
