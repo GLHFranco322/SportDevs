@@ -72,9 +72,9 @@ main {
   }
 }
 
-.slider:hover li {
+/* .slider:hover li {
   animation-play-state: paused !important;
-}
+} */
 
 .slider li:hover {
   transform: scale(1.1);
