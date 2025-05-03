@@ -7,22 +7,21 @@ var session = require('express-session');
 var methodOverride = require('method-override'); // Importar method-override
 
 // Rutas
-var indexRouter = require('./src/routes/index');
-var usersRouter = require('./src/routes/users');
-var registerRouter = require('./src/routes/register');
-var payRouter = require('./src/routes/pay');
-var productsRouter = require('./src/routes/products');
-var loginRouter = require('./src/routes/login');
-var adminRouter = require('./src/routes/admin');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var registerRouter = require('./routes/register');
+var payRouter = require('./routes/pay');
+var productsRouter = require('./routes/products');
+var loginRouter = require('./routes/login');
+var adminRouter = require('./routes/admin');
 
 // Cargar productos desde el archivo JSON en la carpeta 'db'
-var productos = require('./src/db/products.json');
+var productos = require('./db/products.json');
 var app = express();
 
 // Configuración del motor de vistas
 app.set('views', [
-  path.join(__dirname, 'src/views'),
-  path.join(__dirname, 'src/views/user-views'), 
+  path.join(__dirname, 'views'),
 ]);
 app.set('view engine', 'ejs');
 
@@ -30,8 +29,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "..",'public')));
 app.use(methodOverride('_method')); // Configurar method-override
 
 // Configuración de la sesión
@@ -47,7 +45,7 @@ app.use(session({
 }));
 
 // Middleware para agregar req a res.locals
-const addReqToLocals = require('./src/middlewares/addreqToLocals');
+const addReqToLocals = require('./middlewares/addreqToLocals');
 app.use(addReqToLocals);
 
 // Rutas principales
