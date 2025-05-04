@@ -15,6 +15,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      surname: {
+        type: Sequelize.STRING
+      },
       userName: {
         type: Sequelize.STRING
       },
@@ -34,10 +37,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       city: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       country: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
+      },
+      subscribed: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

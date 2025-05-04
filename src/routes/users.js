@@ -4,12 +4,9 @@ var userController = require('../controllers/userController');
 const { register, login, processRegister, processLogin, logout, profile, update } = require('../controllers/userController');
 
 router
-    // .get('/register', register)
-    // .post('/processRegister', processRegister)
-    // .get('/login', login)
-    // .post('/processLogin', processLogin)
-    // .get(`/logout`, logout)
+    .get('/register', register)
+    .post('/processRegister', processRegister)
     .get('/profile', profile)
-    // .put('/update/:id', update)
+    .put('/update/:id', update)
 
 module.exports = router;
