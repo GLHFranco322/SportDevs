@@ -38,11 +38,14 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 3600000,
-    httpOnly: true,
-    secure: false
+      maxAge: 3600000,
+      httpOnly: true,
+      secure: false
   }
 }));
+
+const authMiddleware = require('./middlewares/userSessionCheck');
+app.use('/protected', authMiddleware);
 
 // Middleware para agregar req a res.locals
 const addReqToLocals = require('./middlewares/addreqToLocals');
