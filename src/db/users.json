@@ -218,5 +218,21 @@
     "address": "Maestro Ferreira 1445",
     "city": "San Miguel",
     "country": "Argentina"
+  },
+  {
+    "id": "9adfd567-025e-4b76-a335-3da66af36594",
+    "email": "eric@gmail.com",
+    "name": "Eric",
+    "surname": "Mena",
+    "password": "$2b$10$y5UgX7CLc/cMGVtNWB7atu.b9mnEyfk0aInxoAzOZDxaq/XK7JgQ.",
+    "token": null,
+    "lock": false,
+    "validate": true,
+    "username": "Sir Eric",
+    "rol": "user",
+    "subscribed": false,
+    "address": "Gral. Pico 10631",
+    "city": "Loma Hermosa",
+    "country": "Argentina"
   }
 ]

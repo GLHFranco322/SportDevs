@@ -1,8 +1,5 @@
 <body>
     <header style="height: 100px">
-        <% if (req.session.userLogin) { %>
-            <%- include('./headerUser') %>
-        <% } else { %>
             <div id="header-top">
                 <a href="/" style="text-decoration: none;">
                     <h1>SPORT<span>DEVS</span></h1>
@@ -14,15 +11,25 @@
                             <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
                         </button>
                     </form>
-                    <a href="/login">
-                        <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
-                    </a>
-                    <a href="/pay">
-                        <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="Carrito de compras">
-                    </a>
+                    <% if (req.session.userLogin) { %>
+                        <a href="/auth/logout">
+                            <img src="/images/icons/logout.png" alt="logout icon">
+                        </a>
+                        <% if (req.session.userLogin.rol == 1) { %>
+                        <a href="/admin">
+                            <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+                        </a>
+                        <% } %>
+                    <% } else { %>
+                        <a href="/auth">
+                            <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
+                        </a>
+                    <% } %>
+                        <a href="/pay">
+                            <img src="/images/icons/fi_shopping-bagwallet_icon.png" alt="Carrito de compras">
+                        </a>
                 </div>
             </div>
-        <% } %>
         <div id="header-bottom">
             <nav id="nav-desktop">
                 <ul>
@@ -109,7 +116,7 @@
                                 <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
                             </button>
                         </form>
-                        <a href="/login">
+                        <a href="/auth">
                             <img src="/images/icons/fi_userlogin icon (1).png" alt="login icon">
                         </a>
                         <a href="/pay">

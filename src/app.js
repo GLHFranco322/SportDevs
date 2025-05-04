@@ -9,10 +9,9 @@ var methodOverride = require('method-override'); // Importar method-override
 // Rutas
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var registerRouter = require('./routes/register');
 var payRouter = require('./routes/pay');
 var productsRouter = require('./routes/products');
-var loginRouter = require('./routes/login');
+var authRouter = require('./routes/auth');
 var adminRouter = require('./routes/admin');
 
 // Cargar productos desde el archivo JSON en la carpeta 'db'
@@ -37,27 +36,26 @@ app.use(session({
   secret: 'passmil_123',
   resave: false,
   saveUninitialized: true,
-  cookie: {
+ /*  cookie: {
       maxAge: 3600000,
       httpOnly: true,
       secure: false
-  }
+  } */
 }));
 
 const authMiddleware = require('./middlewares/userSessionCheck');
 app.use('/protected', authMiddleware);
 
-// Middleware para agregar req a res.locals
+// Middleware para poner en locals el userLogin
 const addReqToLocals = require('./middlewares/addreqToLocals');
 app.use(addReqToLocals);
 
 // Rutas principales
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/register', registerRouter);
 app.use('/pay', payRouter);
 app.use('/products', productsRouter);
-app.use('/login', loginRouter);
+app.use('/auth', authRouter);
 app.use('/admin', adminRouter);
 
 // Manejo de errores
