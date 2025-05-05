@@ -1,3 +1,42 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/error.css">
+    <script src="https://kit.fontawesome.com/91e0160591.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/icons/SD.ico" type="image/x-icon">    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <%-include("./partials/header.ejs")%>
+
+    <main id="errorMain">
+
+        <div class="imageBackgroundContainer">
+            <img src="/images/memes/jackie.png" alt="meme de jackie chan" class="imgBackground">
+        </div>
+        <article class="text">
+
+            <h1>
+                WOPA!
+            </h1>
+            <h2>
+                <%= message %>
+            </h2>
+            <p>
+                Se ve que no se encontró lo que buscabas, pero no te preocupes, puedes volver a la página principal o intentar buscar de nuevo.
+            </p>
+        </article>
+
+    </main>
+
+    <%-include("./partials/footer.ejs")%>
+
+</body>
+
+</html>
