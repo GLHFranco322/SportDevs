@@ -25,17 +25,17 @@
                             <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true"
                                 hidden="" checked="checked">
                             <div class="slide-item">
-                                <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
+                                <img src="<%= product.img %>" alt="<%= product.title %>">
                             </div>
                             <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true"
                                 hidden="">
                             <div class="slide-item">
-                                <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
+                                <img src="<%= product.img %>" alt="<%= product.title %>">
                             </div>
                             <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true"
                                 hidden="">
                             <div class="slide-item">
-                                <img src="<%= product.imagen %>" alt="<%= product.titulo %>">
+                                <img src="<%= product.img %>" alt="<%= product.title %>">
                             </div>
                             <label for="slide-3" class="slide-control prev control-1">‹</label>
                             <label for="slide-2" class="slide-control next control-1">›</label>
@@ -59,16 +59,16 @@
                             </ol>
                         </div>
                     </div>
-                    <!-- para esta parte utilicé un template de la página "https://www.migueltroyano.com/css/carrusel-imagenes-html-css/" -->
+                    <!-- para esta parte utilicé un template de la página "https://www.migueltroyano.com/css/carrusel-imges-html-css/" -->
 
                     <form class="product-container" action="/add-to-cart" method="POST">
                         <h1 class="product-name">
-                            <%= product.titulo %>
+                            <%= product.title %>
                         </h1>
                         <p class="product-code">
                             <%= product.id %>
                         </p>
-                        <p class="product-price">$<%= product.precio %>
+                        <p class="product-price">$<%= product.price %>
                         </p>
                         <p class="product-info">Cuotas sin interés</p>
 
@@ -198,26 +198,7 @@
                 </article>
             </section>
 
-            <section id="another_products">
-                <div id="wrapper">
-                    <ul>
-                        <% products.forEach(producto=> { %>
-                            <a href="/products/detail/<%= producto.id %>">
-                                <li>
-                                    <div id="img_container">
-                                        <img src="<%= producto.imagen %>" alt="<%= producto.titulo %>">
-                                    </div>
-                                    <h4>
-                                        <%= producto.titulo %>
-                                    </h4>
-                                    <p>$<%= producto.precio %>
-                                    </p>
-                                </li>
-                            </a>
-                            <% }) %>
-                    </ul>
-                </div>
-            </section>
+            
 
         </main>
 

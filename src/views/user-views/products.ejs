@@ -59,13 +59,13 @@
                 <% products.forEach(producto=> { %>
                     <article class="product">
                         <div class="img_container">
-                            <img src="<%= producto.imagen%>" alt="<%= producto.titulo %>">
+                            <img src="<%= producto.img %>" alt="<%= producto.title %>">
                         </div>
                         <div class="details_container">
                             <h3>
-                                <%= producto.titulo %>
+                                <%= producto.title %>
                             </h3>
-                            <p class="price">$ <%= producto.precio %>
+                            <p class="price">$ <%= producto.price %>
                             </p>
                             <button>
                                 <a href="/products/detail/<%= producto.id %>" class="view_product">Ver Producto</a>

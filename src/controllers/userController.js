@@ -83,12 +83,14 @@ module.exports = {
         country: country.trim(),
       });
 
-      return res.redirect("/auth/login");
+      return res.redirect("/auth");
 
     } catch (error) {
       console.log(error);
     }
   },
-  profile: (req, res) => {},
+  profile: (req, res) => {
+    return res.render("user-views/profile", { title: "profile" });
+  },
   update: (req, res) => {},
 };

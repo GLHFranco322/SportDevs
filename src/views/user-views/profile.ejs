@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/icons/SD.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <script src="https://kit.fontawesome.com/91e0160591.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<%- include('../partials/header.ejs') %>
+
+    <main id="profileMain">
+
+        <section id="profileSection">
+            <article id="articleImagen" class="articleImagen">
+                <img src="/images/diego.png" alt="diego">
+            </article>
+            <div class="titleDiv">
+                <h1>Perfil de usuario</h1>
+                <h2>Bienvenido a tu perfil</h2>
+            </div>
+            <div class="toggleDiv">
+                <div class="toggleDiv1">
+                    <h3>Datos de la cuenta</h3>
+                    <i class="fa-solid fa-user-pen"></i>
+                </div>
+                <div>
+                    <h3>Carrito</h3>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div>
+                    <h3>Historial de compras</h3>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+                <div>
+                    <h3>Favoritos</h3>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+            <article id="articleDatos" class="articleDatos">
+                <p>E-mail</p>
+                <p>Nombre:</p>
+                <p>Apellido</p>
+                <p>Usuario</p>
+                <p>Contraseña</p>
+            </article>
+        </section>
+
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>

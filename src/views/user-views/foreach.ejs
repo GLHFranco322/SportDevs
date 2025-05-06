@@ -1,0 +1,20 @@
+<section id="another_products">
+    <div id="wrapper">
+        <ul>
+            <% products.forEach(producto=> { %>
+                <a href="/products/detail/<%= producto.id %>">
+                    <li>
+                        <div id="img_container">
+                            <img src="<%= producto.img %>" alt="<%= producto.title %>">
+                        </div>
+                        <h4>
+                            <%= producto.title %>
+                        </h4>
+                        <p>$<%= producto.price %>
+                        </p>
+                    </li>
+                </a>
+                <% }) %>
+        </ul>
+    </div>
+</section>

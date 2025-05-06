@@ -138,5 +138,17 @@
     "subcategoria": "eoiwqoeiwq",
     "marca": "oewqioewiq",
     "stock": "20"
+  },
+  {
+    "id": 12,
+    "imagen": "diego.png",
+    "titulo": "copito",
+    "descripcion": "pepoeproapod",
+    "precio": 20000,
+    "descuento": 10,
+    "categoria": "Zepatillas",
+    "subcategoria": "Hombre",
+    "marca": "Nike",
+    "stock": "1"
   }
 ]

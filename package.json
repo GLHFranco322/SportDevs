@@ -2,7 +2,7 @@
   "name": "eventos",
   "version": "0.0.0",
   "private": true,
-  "main" : "src/bin/www",
+  "main": "src/bin/www",
   "scripts": {
     "start": "node ./src/bin/www",
     "dev": "npm-run-all --parallel dev:server dev:browser-sync",

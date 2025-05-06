@@ -1,0 +1,60 @@
+@import url(./partials/general.css);
+
+#profileMain{
+    height: calc(100vh - 100px);
+    align-items: center;
+    justify-content: center;
+    font-family: 'lato', sans-serif;
+}
+
+#profileSection{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(1fr, 400px) 1fr;
+    grid-template-rows: 1fr 3fr;
+
+    .articleImagen{
+        background-color: var(--black-color);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 2px solid var(--black-color);
+        border-bottom: 2px solid var(--black-color);
+        /* border-radius: 5px 5px 0 0; */
+
+        img{
+            height: var(--height-image);
+            width: var(--height-image);
+            border-radius: 50%;
+        }
+    }
+    .toggleDiv{
+        background-color: var(--black-color);
+        color: var(--white-color);
+        font-size: .8rem;
+        width: 100%;
+        
+    }
+    .titleDiv{
+        /* background-color: red; */
+        grid-column: 2/4;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 1rem;
+        border-bottom: 2px solid var(--black-color);
+    }
+    .articleDatos{
+        /* background-color: #000000; */
+        display: flex;
+        grid-column: 2/4;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 1rem;
+        /* outline: 2px solid var(--black-color); */
+    }
+}
