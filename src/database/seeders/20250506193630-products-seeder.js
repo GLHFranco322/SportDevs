@@ -1,6 +1,4 @@
 "use strict";
-
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
@@ -121,8 +119,8 @@ module.exports = {
           title: "pepe",
           description: "ewoqieowqi",
           price: 20,
-          categoryId: null,
-          brandId: null,
+          categoryId: 4,
+          brandId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         }
@@ -133,5 +131,8 @@ module.exports = {
 
   async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete("Products", null, {});
-  },
+  }
 };
+
+
+
