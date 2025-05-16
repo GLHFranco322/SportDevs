@@ -103,9 +103,18 @@ module.exports = {
       console.log(error);
     }
   },
-  profile: (req, res) => {
-    return res.render("user-views/profile", { title: "profile" });
-  },
+  profile: async (req, res) => {
+    try {
+        const userId = req.session.userLogin?.id;
+        if (!userId) return res.redirect('/auth');
+        const user = await db.Users.findByPk(userId);
+        if (!user) return res.redirect('/auth');
+        return res.render("user-views/profile", { title: "profile", user });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send("Error al cargar el perfil");
+    }
+},
   update: (req, res) => {},
   uploadProfilePicture: (req, res) => {
     const userId = req.user.id;

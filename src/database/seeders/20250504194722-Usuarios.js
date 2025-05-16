@@ -21,6 +21,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
+          img: '/images/diego.png',
           email: "user@gmail.com",
           name: "User",
           surname: "SportDevs",

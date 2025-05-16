@@ -18,7 +18,15 @@
 
     <section id="profileSection">
         <article id="articleImagen" class="articleImagen">
-            <img src="/images/diego.png" alt="diego" id="profileImage">
+            <img 
+                src="<%= user.profilePicture 
+                        ? '/images/profiles/' + user.profilePicture 
+                        : (user.img 
+                            ? user.img 
+                            : '/images/icons/default-user.png') %>" 
+                alt="<%= user.name %>" 
+                id="profileImage"
+            >
             <!-- Formulario para cambiar la foto de perfil -->
             <form action="/upload-profile-picture" method="POST" enctype="multipart/form-data" id="profilePictureForm" style="display: none;">
                 <input type="file" id="profilePictureInput" name="profilePicture" accept="image/*">
@@ -27,7 +35,7 @@
         </article>
         <div class="titleDiv">
             <h1>Perfil de usuario</h1>
-            <h2>Bienvenido a tu perfil</h2>
+            <h2>Bienvenido, <%= user.name %>!</h2>
         </div>
         <div class="toggleDiv">
             <div class="toggleDiv1">
@@ -49,15 +57,21 @@
         </div>
         <article id="articleDatos" class="articleDatos">
             <label>E-mail:</label>
-            <input type="email">
+            <input type="email" value="<%= user.email %>" readonly>
             <label>Nombre:</label>
-            <input type="text">
+            <input type="text" value="<%= user.name %>" readonly>
             <label>Apellido:</label>
-            <input type="text">
+            <input type="text" value="<%= user.surname %>" readonly>
             <label>Usuario:</label>
-            <input type="text">
-            <label>Contraseña:</label>
-            <input type="password">
+            <input type="text" value="<%= user.userName %>" readonly>
+            <label>Dirección:</label>
+            <input type="text" value="<%= user.address %>" readonly>
+            <label>Ciudad:</label>
+            <input type="text" value="<%= user.city %>" readonly>
+            <label>País:</label>
+            <input type="text" value="<%= user.country %>" readonly>
+            <label>Suscripto:</label>
+            <input type="text" value="<%= user.subscribed ? 'Sí' : 'No' %>" readonly>
         </article>
     </section>
 
@@ -66,7 +80,7 @@
 <%- include('../partials/footer.ejs') %>
 
 <script>
-    // Agregar evento de clic en la imagen de perfil
+    // Evento de clic en la imagen de perfil
     document.getElementById('profileImage').addEventListener('click', function() {
         document.getElementById('profilePictureInput').click();
     });
