@@ -1,3 +1,4 @@
+// FILEPATH: c:/Users/Franco/Documents/Franco/VS Code/Integrador/Desafio Full Stack/SportDevs/src/controllers/userController.js
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
@@ -5,8 +6,21 @@ const usersFilePath = path.join(__dirname, "../data/users.json");
 const { v4: uuidv4, validate } = require("uuid");
 const { saveJson, readJson } = require("../db/index");
 const { error } = require("console");
+const multer = require("multer");
 
 const db = require("../database/models");
+
+// Configuración de multer para almacenar las imágenes de perfil
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images/profiles');
+  },
+  filename: function (req, file, cb) {
+    cb(null, `${req.user.id}-${Date.now()}${path.extname(file.originalname)}`);
+  }
+});
+
+const upload = multer({ storage: storage });
 
 module.exports = {
   register: (req, res) => {
@@ -93,4 +107,23 @@ module.exports = {
     return res.render("user-views/profile", { title: "profile" });
   },
   update: (req, res) => {},
+  uploadProfilePicture: (req, res) => {
+    const userId = req.user.id;
+    const profilePicture = req.file.filename;
+
+    db.Users.update(
+      { profilePicture: profilePicture },
+      { where: { id: userId } }
+    )
+    .then(() => {
+      res.redirect('/profile');
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).send("Error al actualizar la foto de perfil");
+    });
+  }
 };
+
+// Exportar multer upload para usar en las rutas
+module.exports.upload = upload;

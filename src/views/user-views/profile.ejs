@@ -14,49 +14,65 @@
 
 <%- include('../partials/header.ejs') %>
 
-    <main id="profileMain">
+<main id="profileMain">
 
-        <section id="profileSection">
-            <article id="articleImagen" class="articleImagen">
-                <img src="/images/diego.png" alt="diego">
-            </article>
-            <div class="titleDiv">
-                <h1>Perfil de usuario</h1>
-                <h2>Bienvenido a tu perfil</h2>
+    <section id="profileSection">
+        <article id="articleImagen" class="articleImagen">
+            <img src="/images/diego.png" alt="diego" id="profileImage">
+            <!-- Formulario para cambiar la foto de perfil -->
+            <form action="/upload-profile-picture" method="POST" enctype="multipart/form-data" id="profilePictureForm" style="display: none;">
+                <input type="file" id="profilePictureInput" name="profilePicture" accept="image/*">
+                <button type="submit">Subir</button>
+            </form>
+        </article>
+        <div class="titleDiv">
+            <h1>Perfil de usuario</h1>
+            <h2>Bienvenido a tu perfil</h2>
+        </div>
+        <div class="toggleDiv">
+            <div class="toggleDiv1">
+                <i class="fa-solid fa-user-pen"></i>
+                <h3>Datos de la cuenta</h3>
             </div>
-            <div class="toggleDiv">
-                <div class="toggleDiv1">
-                    <i class="fa-solid fa-user-pen"></i>
-                    <h3>Datos de la cuenta</h3>
-                </div>
-                <div class="toggleDiv1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <h3>Carrito</h3>
-                </div>
-                <div class="toggleDiv1">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    <h3>Historial de compras</h3>
-                </div>
-                <div class="toggleDiv1">
-                    <i class="fa-solid fa-heart"></i>
-                    <h3>Favoritos</h3>
-                </div>
+            <div class="toggleDiv1">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>Carrito</h3>
             </div>
-            <article id="articleDatos" class="articleDatos">
-                <label>E-mail:</label>
-                <input type="email">
-                <label>Nombre:</label>
-                <input type="text">
-                <label>Apellido:</label>
-                <input type="text">
-                <label>Usuario:</label>
-                <input type="text">
-                <label>Contraseña:</label>
-                <input type="password">
-            </article>
-        </section>
+            <div class="toggleDiv1">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>Historial de compras</h3>
+            </div>
+            <div class="toggleDiv1">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Favoritos</h3>
+            </div>
+        </div>
+        <article id="articleDatos" class="articleDatos">
+            <label>E-mail:</label>
+            <input type="email">
+            <label>Nombre:</label>
+            <input type="text">
+            <label>Apellido:</label>
+            <input type="text">
+            <label>Usuario:</label>
+            <input type="text">
+            <label>Contraseña:</label>
+            <input type="password">
+        </article>
+    </section>
 
+</main>
 
-    </main>
+<%- include('../partials/footer.ejs') %>
 
-    <%- include('../partials/footer.ejs') %>
+<script>
+    // Agregar evento de clic en la imagen de perfil
+    document.getElementById('profileImage').addEventListener('click', function() {
+        document.getElementById('profilePictureInput').click();
+    });
+
+    // Enviar el formulario automáticamente después de seleccionar una imagen
+    document.getElementById('profilePictureInput').addEventListener('change', function() {
+        document.getElementById('profilePictureForm').submit();
+    });
+</script>
