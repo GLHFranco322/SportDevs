@@ -45,7 +45,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "/images/products/productJson/producto-4.jpg",
+          img: "/images/Audífonos Gaming RGB.png",
           title: "Audífonos Gaming RGB",
           description: "Audífonos gaming con iluminación RGB, micrófono ajustable y sonido envolvente para una experiencia inmersiva.",
           price: 89.99,
@@ -55,7 +55,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "/images/products/productJson/producto-5.jpg",
+          img: "/images/Mochila Escolar Deportiva.png",
           title: "Mochila Escolar Deportiva",
           description: "Mochila para niños con diseño ergonómico y amplio espacio para libros, ropa y accesorios.",
           price: 34.99,
@@ -65,7 +65,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "/images/products/productJson/producto-6.jpg",
+          img: "/images/Sudadera-de-Entrenamiento.png",
           title: "Sudadera de Entrenamiento",
           description: "Sudadera ligera y transpirable, perfecta para entrenamientos en clima frío.",
           price: 39.99,
@@ -75,7 +75,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "/images/products/productJson/producto-7.jpg",
+          img: "/images/Botas de Senderismo.jpg",
           title: "Botas de Senderismo",
           description: "Botas resistentes al agua, ideales para senderismo y actividades al aire libre.",
           price: 89.99,
@@ -85,7 +85,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "/images/products/productJson/producto-8.jpg",
+          img: "/images/Reloj Deportivo con GPS.jpg",
           title: "Reloj Deportivo con GPS",
           description: "Reloj inteligente con GPS integrado, monitor de ritmo cardíaco y resistencia al agua.",
           price: 199.99,
@@ -95,7 +95,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "/images/products/productJson/producto-9.jpg",
+          img: "/images/Edición Limitada de Camiseta Star Wars.jpg",
           title: "Edición Limitada de Camiseta Star Wars",
           description: "Camiseta temática de Star Wars en edición limitada, ideal para fanáticos.",
           price: 34.99,
@@ -105,7 +105,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "/images/products/productJson/producto-10.jpg",
+          img: "/images/Set-de-Entrenamiento-Infantil.png",
           title: "Set de Entrenamiento Infantil",
           description: "Conjunto de camiseta y pantalón deportivo para niños, fabricado con materiales transpirables.",
           price: 29.99,
@@ -115,7 +115,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          img: "WhatsApp Image 2025-02-24 at 11.28.52_299086a7.jpg",
+          img: "/images/sapo-pepe-peluche.png",
           title: "pepe",
           description: "ewoqieowqi",
           price: 20,

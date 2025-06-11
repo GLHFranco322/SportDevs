@@ -65,13 +65,14 @@ main {
             filter: drop-shadow(0 0 5px var(--white-color));
         }
 
-        #subscribed, #terms{
+        #subscribed,
+        #terms {
             text-align: start;
             width: 100%;
             padding-bottom: 1rem;
         }
 
-        .name-surname{
+        .name-surname {
             display: flex;
             flex-direction: row;
             gap: 1rem;
@@ -139,6 +140,8 @@ input[type="checkbox"] {
     background-color: #242428;
     cursor: pointer;
     position: relative;
+    margin-right: .2lh;
+    top: .2lh;
 }
 
 input[type="checkbox"]:checked {
@@ -165,7 +168,6 @@ input[type="checkbox"]:checked::after {
     }
 }
 
-
 @media (max-width: 1024px) {
 
     #name-div {
@@ -176,33 +178,36 @@ input[type="checkbox"]:checked::after {
 
 /* Verificaciones */
 
-input[type="email"]:invalid:not(:placeholder-shown),
-input[type="password"]:invalid:not(:placeholder-shown),
-input[type="text"]:invalid:not(:placeholder-shown) {
-    border-color: var(--red-color) !important;
-    background-image: url(../images/icons/checked_unvalid.png) !important;
-    filter: drop-shadow(0 0 5px var(--red-color)) !important;
-}
+.register {
 
-input[type="email"]:valid:not(:placeholder-shown),
-input[type="password"]:valid:not(:placeholder-shown),
-input[type="text"]:valid:not(:placeholder-shown) {
-    border-color: var(--green-color) !important;
-    filter: drop-shadow(0 0 5px var(--green-color)) !important;
-    background-image: url(../images/icons/checked_valid.png) !important;
-}
+    input[type="email"]:invalid:not(:placeholder-shown),
+    input[type="password"]:invalid:not(:placeholder-shown),
+    input[type="text"]:invalid:not(:placeholder-shown) {
+        border-color: var(--red-color) !important;
+        background-image: url(../images/icons/checked_unvalid.png) !important;
+        filter: drop-shadow(0 0 5px var(--red-color)) !important;
+    }
 
-input[type="email"]:invalid:not(:placeholder-shown),
-input[type="password"]:invalid:not(:placeholder-shown),
-input[type="email"]:valid:not(:placeholder-shown),
-input[type="password"]:valid:not(:placeholder-shown),
-input[type="text"]:valid:not(:placeholder-shown) {
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: calc(100% - 10px);
-}
+    input[type="email"]:valid:not(:placeholder-shown),
+    input[type="password"]:valid:not(:placeholder-shown),
+    input[type="text"]:valid:not(:placeholder-shown) {
+        border-color: var(--green-color) !important;
+        filter: drop-shadow(0 0 5px var(--green-color)) !important;
+        background-image: url(../images/icons/checked_valid.png) !important;
+    }
 
-input:invalid~button[type="submit"] {
-    opacity: .6;
-    pointer-events: none;
+    input[type="email"]:invalid:not(:placeholder-shown),
+    input[type="password"]:invalid:not(:placeholder-shown),
+    input[type="email"]:valid:not(:placeholder-shown),
+    input[type="password"]:valid:not(:placeholder-shown),
+    input[type="text"]:valid:not(:placeholder-shown) {
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 10px);
+    }
+
+    input:invalid~button[type="submit"] {
+        opacity: .6;
+        pointer-events: none;
+    }
 }
